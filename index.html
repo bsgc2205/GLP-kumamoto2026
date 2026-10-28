@@ -1,331 +1,154 @@
-<!DOCTYPE html>
+선택된 파일 없음
+라이브러리
+
+
+
+라이브러리 검색
+
+새로 만들기
+
+
+전체
+
+즐겨찾기
+
+이미지
+
+파일
+
+이름
+수정됨
+크기
+—
+—
+
+라이브러리
+/
+index.html
+
+공유
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+<!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>가고시마 & 구마모토 골프 투어</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-muted: #666666;
-        }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        header h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        header p { font-size: 0.9rem; opacity: 0.9; }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        .section-title {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        /* 날씨 및 숙소 카드 */
-        .info-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .info-card h3 { color: var(--accent-color); font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .info-card p { font-size: 0.95rem; margin-bottom: 0.25rem; }
-        
-        /* 일정 카드 */
-        .day-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 0;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        .day-header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 1rem;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-        }
-        .timeline { padding: 1rem; }
-        .timeline-item {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 1.25rem;
-            border-left: 2px solid #e0e0e0;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-        }
-        .time { font-weight: bold; color: var(--accent-color); font-size: 0.95rem; }
-        .event { font-weight: bold; margin: 0.25rem 0; }
-        .desc { font-size: 0.9rem; color: var(--text-muted); }
-        .transport {
-            display: inline-block;
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin: 0.25rem 0;
-            font-weight: bold;
-        }
-        .meal {
-            display: inline-block;
-            background: #fff3e0;
-            color: #e65100;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin: 0.25rem 0;
-            font-weight: bold;
-        }
-
-        /* 조편성표 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        th, td {
-            padding: 0.75rem;
-            border-bottom: 1px solid #eeeeee;
-            font-size: 0.9rem;
-        }
-        th { background-color: var(--primary-color); color: white; }
-        .group-col { font-weight: bold; }
-        .group-1 { background-color: #fff8e1; }
-        .group-2 { background-color: #e8f5e9; }
-        .group-3 { background-color: #e3f2fd; } /* 강조된 3조 */
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#183f35">
+<meta name="description" content="2026년 11월 25–28일 가고시마·히토요시 골프 여행. 3박 4일, 54홀, 일정별 날씨와 이동 지도, 식당과 온천 안내.">
+<title>가고시마, 가을의 라운드 · 2026 여행 수첩</title>
+<style>
+.group-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}.group-toolbar select{background:var(--white);border:1px solid var(--line);padding:9px 12px;color:var(--green);min-width:170px;font-size:12px}.condition-pills{display:flex;gap:8px;flex-wrap:wrap}.condition-pills span{background:var(--light);padding:6px 10px;font-size:11px}.group-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.round-column{border:1px solid var(--line);background:var(--white)}.round-column>header{background:var(--green);color:var(--paper);padding:16px 20px}.round-column>header strong{font:24px var(--serif)}.round-column>header span{font-size:11px;margin-left:10px}.round-column>header p{font-size:10px;color:#c4d2c3;margin-top:4px}.group-unit{padding:16px 18px;border-bottom:1px solid var(--line)}.group-unit:last-child{border-bottom:0}.group-unit h3{font-size:10px;font-weight:400;color:var(--muted);letter-spacing:.1em;margin-bottom:9px}.group-members{display:grid;grid-template-columns:1fr 1fr;gap:6px}.member{background:#f1f2ea;padding:6px 10px;font-size:13px;text-align:center}.member.is-selected{background:var(--red);color:white}.group-unit.has-selected{background:#f7f3e9}.group-summary{margin-top:16px;border:1px solid var(--line);padding:15px 18px;font-size:12px;color:var(--muted)}.group-summary b{color:var(--green)}.pair-details{margin-top:17px;font-size:11px;color:var(--muted)}.pair-details summary{cursor:pointer}.repeat-pairs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.repeat-pairs span{padding:5px 9px;background:#eeece3}.day-groups{border:1px solid var(--line);background:var(--white);padding:14px 16px;margin-bottom:23px}.day-groups h4{font-size:12px;margin:0 0 8px}.day-groups p{font-size:11px;line-height:1.9;color:var(--muted)}.day-groups p strong{color:var(--ink);font-weight:500;margin-right:8px}.day-groups a{font-size:10px}.roster-wrap{overflow-x:auto;margin-top:15px}.roster-table{width:100%;border-collapse:collapse;font-size:11px;min-width:500px}.roster-table th,.roster-table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}.roster-table th{font-weight:500;background:var(--light)}.roster-table tr.selected td{background:#f1e9d9}.group-error{color:#a43220}
+@media(max-width:680px){.group-grid{grid-template-columns:1fr}.round-column>header{display:flex;align-items:center;flex-wrap:wrap;gap:0 10px}.round-column>header p{flex-basis:100%}.group-unit{padding:12px 17px}.group-members{grid-template-columns:repeat(4,1fr);gap:4px}.member{font-size:12px;padding:7px 3px}.condition-pills{gap:5px}.condition-pills span{font-size:10px;padding:5px 7px}.group-toolbar{align-items:start;flex-direction:column}.group-summary{font-size:11px;padding:13px}.day-groups p{font-size:10px}}
+@media print{#dayPanel{display:none!important}.group-toolbar select,.group-toolbar label,.pair-details,.day-groups,.roster-wrap{display:none!important}.group-grid{grid-template-columns:repeat(3,1fr);gap:10px}.round-column{break-inside:avoid}.round-column>header{background:#edf0e6;color:#111;padding:10px}.round-column>header p{color:#555}.round-column>header strong{font-size:20px}.group-unit{padding:10px}.group-members{gap:3px}.member{font-size:10px;padding:4px 2px}.member.is-selected{color:#111;background:#e0e4d5}.group-summary{font-size:10px;padding:10px}.condition-pills span{font-size:10px}}
+:root{--paper:#f7f5ef;--ink:#203d34;--green:#183f35;--light:#e8ede4;--muted:#68756d;--line:#dcded3;--red:#b45238;--gold:#b5a36c;--white:#fffefa;--serif:Georgia,'Noto Serif KR','Batang',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:15px;line-height:1.65;word-break:keep-all}button,select{font:inherit}button,a,select,input{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-underline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:4px}button:disabled{cursor:wait;opacity:.6}svg{display:block}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.35}button{color:inherit}button,select{border-radius:0}.wrap{width:min(1200px,calc(100% - 64px));margin:auto}.eyebrow{font-size:11px;letter-spacing:.17em;font-weight:700;text-transform:uppercase}.muted{color:var(--muted)}.small{font-size:12px}.serif{font-family:var(--serif)}.topbar{background:var(--green);color:#f8f5e9;font-size:11px;letter-spacing:.13em;text-align:center;padding:9px 20px}.header{position:sticky;top:0;z-index:30;background:rgba(247,245,239,.97);border-bottom:1px solid var(--line)}.nav{height:74px;display:flex;align-items:center;gap:35px}.brand{text-decoration:none;display:flex;align-items:center;gap:12px;margin-right:auto}.brand-mark{border:1px solid var(--green);width:38px;height:38px;display:grid;place-content:center;font-family:var(--serif);font-size:23px}.brand strong{font-size:15px;display:block;letter-spacing:.02em}.brand small{font-size:9px;letter-spacing:.18em;display:block}.nav-links{display:flex;gap:25px;font-size:13px}.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--red)}.outline-btn{border:1px solid var(--line);padding:8px 13px;background:transparent;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px}.outline-btn:hover{border-color:var(--green);background:var(--light)}.solid-btn{background:var(--green);color:white;border:1px solid var(--green);padding:11px 18px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;font-size:13px;gap:12px}.solid-btn:hover{background:#2e5749}.hero{padding:62px 0 0}.her
+@media(min-width:1500px){.hero{padding-top:75px}}
+@media(max-width:900px){.wrap{width:calc(100% - 40px)}.nav{gap:20px}.nav-links{gap:16px}.hero-top{gap:28px}.hero-description{font-size:13px}.trip-stats{margin-top:30px}.stat{padding-left:17px;gap:12px}.stat strong{font-size:25px}.day-layout{gap:25px}.map-container{height:290px}.course-body{padding:17px}.course h3{font-size:17px}.food{padding:18px}.food h3{font-size:16px}.food dl{font-size:10px}.day-tab span{font-size:10px}}
+@media(max-width:680px){html{scroll-padding-top:70px}.wrap{width:calc(100% - 36px)}.topbar{font-size:9px;padding:7px 10px;letter-spacing:.1em}.nav{height:65px;gap:15px}.brand{gap:9px}.brand-mark{height:31px;width:31px;font-size:20px}.brand strong{font-size:12px}.brand small{font-size:8px}.nav-links{display:none}.nav>.outline-btn{font-size:10px;padding:7px 9px}.hero{padding-top:35px}.hero-top{grid-template-columns:1fr;gap:28px}h1{font-size:39px;line-height:1.4}.hero-description{margin:17px 0 20px;max-width:none}.hero-art{max-width:470px;width:100%;margin:auto}.hero-art>svg{border-radius:45% 45% 0 0;max-height:295px;object-fit:cover}.stamp{width:65px;height:65px;font-size:18px;right:0}.art-caption{font-size:8px}.trip-date{font-size:16px}.trip-stats{grid-template-columns:1fr 1fr;gap:20px;padding:20px 0}.stat:nth-child(3){border:0;padding-left:0}.stat strong{font-size:28px}.stat span{font-size:10px}.section{padding-top:42px}.section-head{gap:15px;align-items:start;flex-direction:column;margin-bottom:20px}.section-head h2{font-size:27px}.section-head>p{font-size:11px}.weather-grid{grid-template-columns:1fr 1fr}.weather-card{padding:15px;min-height:142px}.weather-card:nth-child(2){border-right:0}.weather-card:nth-child(-n+2){border-bottom:1px solid var(--line)}.weather-state{font-size:21px}.weather-date{font-size:11px}.weather-detail{font-size:10px}.weather-note{font-size:10px}.notice{font-size:11px;padding:11px 13px}.days{gap:3px;margin:22px 0}.day-tab{padding:12px 7px}.day-tab small{font-size:9px}.day-tab strong{font-size:20px}.day-tab span{font-size:9px;display:block;min-height:28px;line-height:1.5}.day-layout{grid-template-columns:1fr;gap:20px}.day-title{gap:15px}.day-title h3{font-size:20px}.event{padding-bottom:24px}.route-card{position:static}.map-container{height:300px}.course-grid,.food-grid{grid-template-columns:1fr}.course{display:grid;grid-template-columns:94px 1fr}.course-art{height:100%;min-height:235px}.course-art svg{height:100%;width:290px;position:absolute;left:-110px}.course-art .course-num{font-size:24px;left:15px}.course-body{padding:20px}.course h3{font-size:18px}.course p.description{min-height:0;margin:12px 0}.course-meta{font-size:10px}.food-grid{gap:14px}.food{padding:23px}.food .food-type{display:none}.food h3{font-size:19px}.food dl{font-size:11px}.food-plans{grid-template-columns:1fr}.food-plan{border-right:0;border-bottom:1px solid var(--line);padding:14px 17px}.food-plan span{float:left;width:46px;margin:2px 0}.food-plan small{margin-left:46px}.stay{margin-top:42px;padding:25px;grid-template-columns:1fr;gap:20px}.stay h2{font-size:28px}.stay-info{border-left:0;border-top:1px solid #577363;padding:21px 0 0;gap:13px}.bottom-grid{grid-template-columns:1fr;gap:32px}.check-item{font-size:11px}.source-box{margin-top:30px}footer .wrap{flex-direction:column;gap:7px}.mobile-top{display:inline-block}.source-links{gap:7px 15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:white;color:#111;font-size:11px}.wrap{width:100%}.topbar,.header,.hero-art,.hero-actions,.days,.route-card,.course-art,.food-grid,.checklist,.source-box,.toast,.no-print,.weather-note button{display:none!important}.hero{padding:0}.hero-top{display:block}h1{font-size:29px}h1 br{display:none}.hero-description{margin:8px 0}.trip-stats{margin-top:15px;padding:12px 0}.section{padding-top:22px}.section-head{margin-bottom:12px}.section-head h2{font-size:21px}.weather-card{min-height:0;padding:10px}.weather-state{font-size:16px}.weather-location{font-size:9px}.weather-detail{font-size:9px}.weather-grid{grid-template-columns:repeat(4,1fr)}.notice{font-size:10px}.day-layout{display:block}.day-title{margin-bottom:12px}.timeline{column-count:2;column-gap:30px}.event{break-inside:avoid;padding-bottom:17px;grid-template-columns:50px 1fr;gap:18px}.event:before{left:58px}.event:after{left:55px}.event h4{font-size:12px}.event p{font-size:10px}.event .text-btn{display:none}.course-grid{gap:10px}.course{display:block;break-inside:avoid}.course-body{padding:12px}.course h3{font-size:15px}.course p.description{font-size:10px;min-height:0}.course-links{display:none}.stay{margin-top:22px;padding:20px;break-inside:avoid;background:#f2f3ed;color:#111;display:block}.stay p,.stay .eyebrow,.stay-info dt{color:#555}.stay h2{font-size:23px}.stay-info{border:0;padding:0;display:block}.stay-info div{display:inline-block;margin-right:25px}.stay .outline-btn{display:none}.bottom-grid{display:block}.prep{display:none}.verify ul{font-size:10px}footer{font-size:9px}.print-only{display:block}.print-day{break-inside:avoid;margin-top:18px}.print-day h3{font-size:16px;margin-bottom:10px}.print-day table{width:100%;border-collapse:collapse;font-size:10px}.print-day td{padding:6px;border-bottom:1px solid #ddd;vertical-align:top}.print-day td:first-child{width:55px}.print-route{font-size:10px;color:#555;margin-top:10px}}
+.mobile-nav{display:none}@media(max-width:680px){html{scroll-padding-top:110px}.mobile-nav{display:flex;justify-content:space-around;gap:10px;border-top:1px solid var(--line);padding:8px 18px;font-size:11px}.mobile-nav a{text-decoration:none}}@media print{.mobile-nav{display:none!important}}
+</style>
 </head>
 <body>
+<div class="topbar">KAGOSHIMA & HITOYOSHI · 25—28 NOVEMBER 2026</div>
+<header class="header"><div class="wrap nav">
+  <a class="brand" href="#top" aria-label="여행 수첩 처음으로"><span class="brand-mark" aria-hidden="true">旅</span><span><strong>가을의 라운드</strong><small>KYUSHU GOLF JOURNAL</small></span></a>
+  <nav class="nav-links" aria-label="주요 메뉴"><a href="#itinerary">여행 일정</a><a href="#groups">조편성</a><a href="#courses">골프 코스</a><a href="#dining">식당</a><a href="#stay">숙소·준비</a></nav>
+  <button class="outline-btn" id="printBtn" type="button">일정 인쇄 ↗</button>
+</div><nav class="mobile-nav" aria-label="모바일 주요 메뉴"><a href="#itinerary">일정·날씨</a><a href="#groups">조편성</a><a href="#dining">식당</a><a href="#stay">숙소·준비</a></nav></header>
+<main id="top" class="wrap">
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-top"><div>
+    <div class="eyebrow kicker">2026 AUTUMN GOLF ESCAPE</div>
+    <h1 id="heroTitle">가고시마,<br>가을을 따라 <em>라운드.</em></h1>
+    <p class="hero-description">낮에는 초록의 페어웨이, 저녁에는 따뜻한 온천.<br>가고시마와 히토요시를 잇는 3박 4일,<br>우리의 골프 여행을 한 권의 수첩에 담았습니다.</p>
+    <div class="hero-actions"><a class="solid-btn" href="#itinerary">여행 일정 펼치기 <span aria-hidden="true">↓</span></a><span class="trip-date">11.25 <span class="muted">—</span> 11.28</span></div>
+  </div><div class="hero-art">
+    <svg viewBox="0 0 600 420" role="img" aria-label="가을 햇살 아래 산과 페어웨이, 깃발을 그린 여행 일러스트">
+      <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#e4e9db"/><stop offset="1" stop-color="#f0e7cc"/></linearGradient><linearGradient id="fairway" x2=".5" y2="1"><stop stop-color="#b7bc83"/><stop offset="1" stop-color="#6d8a5f"/></linearGradient><pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#36533c" opacity=".14"/></pattern></defs>
+      <rect width="600" height="420" fill="url(#sky)"/><circle cx="452" cy="102" r="41" fill="#c37b51" opacity=".82"/>
+      <path d="M0 235 100 173 151 192 245 117 283 141 324 122 424 211 498 177 600 214V420H0Z" fill="#98aa93"/>
+      <path d="M0 255 80 222 162 231 232 211 317 231 393 195 443 218 512 209 600 255V420H0Z" fill="#67826b"/>
+      <path d="M0 295Q125 219 283 262T600 240V420H0Z" fill="#365a43"/>
+      <path d="M232 258Q405 269 464 312T393 420H34Q84 352 250 324T232 258Z" fill="url(#fairway)"/>
+      <path d="M227 266Q392 281 425 310T353 420H196Q293 346 339 323T227 266" fill="#bac18b" opacity=".42"/>
+      <path d="M403 310Q420 294 452 304T458 320Q421 330 403 310" fill="#e4d8b9"/>
+      <ellipse cx="332" cy="359" rx="83" ry="28" fill="#b8bf86"/><ellipse cx="351" cy="367" rx="5" ry="2" fill="#40593b"/>
+      <path d="M351 365V239" stroke="#f3f0de" stroke-width="3"/><path d="M352 239 410 253 352 270Z" fill="#ac4d33"/>
+      <g fill="#244c38"><path d="M0 420V214L43 307H27L70 370H45L79 420Z"/><path d="m54 420 33-56H75l35-61 37 61h-15l33 56Z"/><path d="m469 420 35-82h-13l44-90 47 90h-17l35 82Z"/><path d="m548 420 35-82h-12l29-63v145Z"/></g>
+      <g fill="#b27c43"><ellipse cx="171" cy="282" rx="22" ry="28"/><ellipse cx="154" cy="294" rx="18" ry="21"/><ellipse cx="192" cy="294" rx="16" ry="21"/></g><path d="M173 290V331" stroke="#5a6545" stroke-width="3"/>
+      <rect width="600" height="420" fill="url(#grain)"/>
+      <path d="M22 397h40M22 387v20M578 397h-40M578 387v20" stroke="#c4cba9" opacity=".6"/>
+    </svg>
+    <div class="stamp" aria-hidden="true">54 HOLES<small>秋のゴルフ旅</small></div><div class="art-caption"><span>九州、秋のゴルフ旅</span><span>TRAVEL ILLUSTRATION / NOT A COURSE PHOTO</span></div>
+  </div></div>
+  <div class="trip-stats"><div class="stat"><strong>04</strong><span><b>3박 4일</b><br>11.25 수 — 11.28 토</span></div><div class="stat"><strong>54</strong><span><b>세 번의 라운드</b><br>매일 18홀 · 셀프+카트</span></div><div class="stat"><strong>12</strong><span><b>함께하는 여행</b><br>12명 · 1인 1실 일정</span></div><div class="stat"><strong>♨</strong><span><b>히토요시 온천</b><br>Hotel Hananoshou 3박</span></div></div>
+</section>
 
-    <header>
-        <h1>가고시마 & 구마모토 골프 투어</h1>
-        <p>3박 4일 식도락 골프 54H & 틈새관광</p>
-        <p>2026.11.25(수) ~ 11.28(토)</p>
-    </header>
+<section id="itinerary" class="section" aria-labelledby="itineraryTitle">
+  <div class="section-head"><div><div class="eyebrow muted">01 / THE ITINERARY</div><h2 id="itineraryTitle">날짜를 따라, 여행을 펼치다</h2></div><p>날짜를 선택해 하루의 일정과 이동경로를 살펴보세요.<br>한국과 일본의 시차는 없습니다. 모든 시각은 현지 기준입니다.</p></div>
+  <div class="weather-note"><span class="dot"></span><span id="weatherStatus" role="status">여행일의 날씨 예보를 확인하고 있습니다.</span><button type="button" class="text-btn" id="refreshWeather">날씨 새로고침 ↻</button></div>
+  <div class="weather-grid" id="weatherGrid" aria-label="날짜별 주요 활동지역 날씨"></div>
 
-    <div class="container">
-        
-        <!-- 날씨 요약 (하드코딩 또는 나중에 스크립트로 연동 가능) -->
-        <div class="info-card" style="background-color: #e1f5fe;">
-            <h3>⛅ 현지 날씨 예보 (가고시마/히토요시)</h3>
-            <p><strong>11/25 (수):</strong> 맑음 (12℃ ~ 20℃)</p>
-            <p><strong>11/26 (목):</strong> 구름조금 (10℃ ~ 18℃)</p>
-            <p><strong>11/27 (금):</strong> 맑음 (11℃ ~ 19℃)</p>
-            <p><strong>11/28 (토):</strong> 맑음 (9℃ ~ 17℃)</p>
-            <p style="font-size: 0.8rem; color: #555; margin-top: 5px;">* 출발 전 기상청 예보를 다시 확인해주세요.</p>
-        </div>
-
-        <h2 class="section-title">🏨 숙소 정보</h2>
-        <div class="info-card">
-            <h3>Hotel Hananoshou Resort (하나노쇼 리조트)</h3>
-            <p><strong>주소:</strong> 3316-6 Higashimashitamachi, Hitoyoshi, Kumamoto</p>
-            <p><strong>연락처:</strong> +81-966-22-1126</p>
-            <p><strong>특징:</strong> 천연온천 료칸, 1인 1실, 조식 포함</p>
-        </div>
-
-        <h2 class="section-title">📅 상세 일정</h2>
-
-        <!-- Day 1 -->
-        <div class="day-card">
-            <div class="day-header">
-                <span>1일차</span>
-                <span>11/25 (수)</span>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="time">15:35</div>
-                    <div class="event">인천 공항 출발</div>
-                    <div class="desc">이스타항공 ZET 651</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">17:15</div>
-                    <div class="event">가고시마 공항 도착</div>
-                    <div class="transport">🚗 구마모토 히토요시로 이동 (약 45분 소요)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">19:00~</div>
-                    <div class="event">추천 석식</div>
-                    <div class="meal">🍣 활어 및 초밥 전문점 (스시노 키타카와)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">야간</div>
-                    <div class="event">호텔 체크인 및 온천 휴식</div>
-                    <div class="desc">온천 영업시간: 오전 6시 ~ 밤 12시</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Day 2 -->
-        <div class="day-card">
-            <div class="day-header">
-                <span>2일차</span>
-                <span>11/26 (목)</span>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="time">08:30</div>
-                    <div class="event">조식 후 호텔 출발</div>
-                    <div class="transport">🚗 골프장으로 이동 (약 50분 소요)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">10:03 OUT</div>
-                    <div class="event">⛳ 가고시마 국제 CC 18홀 라운드</div>
-                    <div class="desc">셀프+카트 플레이 / 매력: 사쿠라지마 전망</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">오후</div>
-                    <div class="event">틈새관광 (석식 전)</div>
-                    <div class="desc">히토요시 랜드마크 핫센바, 아오이신사</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">18:30</div>
-                    <div class="event">추천 석식</div>
-                    <div class="meal">🥩 테판야키 스테이크 오마카세</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Day 3 -->
-        <div class="day-card">
-            <div class="day-header">
-                <span>3일차</span>
-                <span>11/27 (금)</span>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="time">08:30</div>
-                    <div class="event">조식 후 호텔 출발</div>
-                    <div class="transport">🚗 골프장으로 이동 (약 50분 소요)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">10:13 OUT</div>
-                    <div class="event">⛳ 가고시마 미조베 CC 18홀 라운드</div>
-                    <div class="desc">셀프+카트 플레이 / 7개 홀 연못 배치 (방향성 중요)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">오후</div>
-                    <div class="event">틈새관광</div>
-                    <div class="desc">시마즈가의 일본 정원 센간엔 (사쿠라지마 활화산/바다뷰)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">18:30</div>
-                    <div class="event">추천 석식</div>
-                    <div class="meal">🍱 일식 이자카야 카이세키 (사바노야)</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Day 4 -->
-        <div class="day-card">
-            <div class="day-header">
-                <span>4일차</span>
-                <span>11/28 (토)</span>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="time">08:30</div>
-                    <div class="event">조식 후 체크아웃 및 호텔 출발</div>
-                    <div class="transport">🚗 골프장으로 이동 (약 10분 소요)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">09:00</div>
-                    <div class="event">⛳ 체리 CC 히토요시 코스 18홀 라운드</div>
-                    <div class="desc">셀프+카트 플레이 / 정원풍의 구릉 코스</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">15:00~</div>
-                    <div class="event">골프장 출발</div>
-                    <div class="transport">🚗 공항으로 이동 (약 50분 소요)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">18:10</div>
-                    <div class="event">가고시마 공항 출발</div>
-                    <div class="desc">이스타항공 ZET 652 (수속 및 면세점 이용)</div>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">👥 조편성표</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>조</th>
-                    <th>참가자 성명 (전일정 동일)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="group-1">
-                    <td class="group-col" rowspan="4">1조</td>
-                    <td>SHIN YOUNGTAE / M</td>
-                </tr>
-                <tr class="group-1"><td>JUNG JINTONG / M</td></tr>
-                <tr class="group-1"><td>KIM SUNGSOO / M</td></tr>
-                <tr class="group-1"><td>LEE EOKWOO / M</td></tr>
-                
-                <tr class="group-2">
-                    <td class="group-col" rowspan="4">2조</td>
-                    <td>CHOI JINYOUNG / M</td>
-                </tr>
-                <tr class="group-2"><td>LEE YONGWOO / M</td></tr>
-                <tr class="group-2"><td>JIN YOUNGSEOK / M</td></tr>
-                <tr class="group-2"><td>YUN GEUMSOO / M</td></tr>
-
-                <!-- 강조된 3조 -->
-                <tr class="group-3">
-                    <td class="group-col" rowspan="4">3조</td>
-                    <td>KIM WONGI / M</td>
-                </tr>
-                <tr class="group-3"><td>JANG WHANBIN / M</td></tr>
-                <tr class="group-3" style="font-weight:bold; color:var(--primary-color);"><td>JEONG DONGHUN / M</td></tr>
-                <tr class="group-3"><td>LIM SOOYEON / F</td></tr>
-            </tbody>
-        </table>
-
-    </div>
-</body>
-</html>
