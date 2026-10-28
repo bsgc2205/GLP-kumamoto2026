@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가고시마 & 구마모토 골프 투어</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 0.9rem; opacity: 0.9; }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        /* 날씨 및 숙소 카드 */
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .info-card h3 { color: var(--accent-color); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .info-card p { font-size: 0.95rem; margin-bottom: 0.25rem; }
+        
+        /* 일정 카드 */
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .day-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        .timeline { padding: 1rem; }
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            border-left: 2px solid #e0e0e0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+        .time { font-weight: bold; color: var(--accent-color); font-size: 0.95rem; }
+        .event { font-weight: bold; margin: 0.25rem 0; }
+        .desc { font-size: 0.9rem; color: var(--text-muted); }
+        .transport {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin: 0.25rem 0;
+            font-weight: bold;
+        }
+        .meal {
+            display: inline-block;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin: 0.25rem 0;
+            font-weight: bold;
+        }
+
+        /* 조편성표 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        th, td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 0.9rem;
+        }
+        th { background-color: var(--primary-color); color: white; }
+        .group-col { font-weight: bold; }
+        .group-1 { background-color: #fff8e1; }
+        .group-2 { background-color: #e8f5e9; }
+        .group-3 { background-color: #e3f2fd; } /* 강조된 3조 */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>가고시마 & 구마모토 골프 투어</h1>
+        <p>3박 4일 식도락 골프 54H & 틈새관광</p>
+        <p>2026.11.25(수) ~ 11.28(토)</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- 날씨 요약 (하드코딩 또는 나중에 스크립트로 연동 가능) -->
+        <div class="info-card" style="background-color: #e1f5fe;">
+            <h3>⛅ 현지 날씨 예보 (가고시마/히토요시)</h3>
+            <p><strong>11/25 (수):</strong> 맑음 (12℃ ~ 20℃)</p>
+            <p><strong>11/26 (목):</strong> 구름조금 (10℃ ~ 18℃)</p>
+            <p><strong>11/27 (금):</strong> 맑음 (11℃ ~ 19℃)</p>
+            <p><strong>11/28 (토):</strong> 맑음 (9℃ ~ 17℃)</p>
+            <p style="font-size: 0.8rem; color: #555; margin-top: 5px;">* 출발 전 기상청 예보를 다시 확인해주세요.</p>
+        </div>
+
+        <h2 class="section-title">🏨 숙소 정보</h2>
+        <div class="info-card">
+            <h3>Hotel Hananoshou Resort (하나노쇼 리조트)</h3>
+            <p><strong>주소:</strong> 3316-6 Higashimashitamachi, Hitoyoshi, Kumamoto</p>
+            <p><strong>연락처:</strong> +81-966-22-1126</p>
+            <p><strong>특징:</strong> 천연온천 료칸, 1인 1실, 조식 포함</p>
+        </div>
+
+        <h2 class="section-title">📅 상세 일정</h2>
+
+        <!-- Day 1 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span>1일차</span>
+                <span>11/25 (수)</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">15:35</div>
+                    <div class="event">인천 공항 출발</div>
+                    <div class="desc">이스타항공 ZET 651</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">17:15</div>
+                    <div class="event">가고시마 공항 도착</div>
+                    <div class="transport">🚗 구마모토 히토요시로 이동 (약 45분 소요)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">19:00~</div>
+                    <div class="event">추천 석식</div>
+                    <div class="meal">🍣 활어 및 초밥 전문점 (스시노 키타카와)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">야간</div>
+                    <div class="event">호텔 체크인 및 온천 휴식</div>
+                    <div class="desc">온천 영업시간: 오전 6시 ~ 밤 12시</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span>2일차</span>
+                <span>11/26 (목)</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">08:30</div>
+                    <div class="event">조식 후 호텔 출발</div>
+                    <div class="transport">🚗 골프장으로 이동 (약 50분 소요)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">10:03 OUT</div>
+                    <div class="event">⛳ 가고시마 국제 CC 18홀 라운드</div>
+                    <div class="desc">셀프+카트 플레이 / 매력: 사쿠라지마 전망</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">오후</div>
+                    <div class="event">틈새관광 (석식 전)</div>
+                    <div class="desc">히토요시 랜드마크 핫센바, 아오이신사</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">18:30</div>
+                    <div class="event">추천 석식</div>
+                    <div class="meal">🥩 테판야키 스테이크 오마카세</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span>3일차</span>
+                <span>11/27 (금)</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">08:30</div>
+                    <div class="event">조식 후 호텔 출발</div>
+                    <div class="transport">🚗 골프장으로 이동 (약 50분 소요)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">10:13 OUT</div>
+                    <div class="event">⛳ 가고시마 미조베 CC 18홀 라운드</div>
+                    <div class="desc">셀프+카트 플레이 / 7개 홀 연못 배치 (방향성 중요)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">오후</div>
+                    <div class="event">틈새관광</div>
+                    <div class="desc">시마즈가의 일본 정원 센간엔 (사쿠라지마 활화산/바다뷰)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">18:30</div>
+                    <div class="event">추천 석식</div>
+                    <div class="meal">🍱 일식 이자카야 카이세키 (사바노야)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span>4일차</span>
+                <span>11/28 (토)</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">08:30</div>
+                    <div class="event">조식 후 체크아웃 및 호텔 출발</div>
+                    <div class="transport">🚗 골프장으로 이동 (약 10분 소요)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">09:00</div>
+                    <div class="event">⛳ 체리 CC 히토요시 코스 18홀 라운드</div>
+                    <div class="desc">셀프+카트 플레이 / 정원풍의 구릉 코스</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">15:00~</div>
+                    <div class="event">골프장 출발</div>
+                    <div class="transport">🚗 공항으로 이동 (약 50분 소요)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">18:10</div>
+                    <div class="event">가고시마 공항 출발</div>
+                    <div class="desc">이스타항공 ZET 652 (수속 및 면세점 이용)</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">👥 조편성표</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>조</th>
+                    <th>참가자 성명 (전일정 동일)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="group-1">
+                    <td class="group-col" rowspan="4">1조</td>
+                    <td>SHIN YOUNGTAE / M</td>
+                </tr>
+                <tr class="group-1"><td>JUNG JINTONG / M</td></tr>
+                <tr class="group-1"><td>KIM SUNGSOO / M</td></tr>
+                <tr class="group-1"><td>LEE EOKWOO / M</td></tr>
+                
+                <tr class="group-2">
+                    <td class="group-col" rowspan="4">2조</td>
+                    <td>CHOI JINYOUNG / M</td>
+                </tr>
+                <tr class="group-2"><td>LEE YONGWOO / M</td></tr>
+                <tr class="group-2"><td>JIN YOUNGSEOK / M</td></tr>
+                <tr class="group-2"><td>YUN GEUMSOO / M</td></tr>
+
+                <!-- 강조된 3조 -->
+                <tr class="group-3">
+                    <td class="group-col" rowspan="4">3조</td>
+                    <td>KIM WONGI / M</td>
+                </tr>
+                <tr class="group-3"><td>JANG WHANBIN / M</td></tr>
+                <tr class="group-3" style="font-weight:bold; color:var(--primary-color);"><td>JEONG DONGHUN / M</td></tr>
+                <tr class="group-3"><td>LIM SOOYEON / F</td></tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
