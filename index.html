@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#183f35">
-<meta name="app-version" content="2026.10.30-owner-links-meeting-v9">
+<meta name="app-version" content="2026.10.30-shared-gallery-v11">
 <meta name="description" content="2026년 11월 25–28일 가고시마·히토요시 골프 여행. 3박 4일, 54홀, 일정별 날씨와 이동 지도, 식당과 온천 안내.">
 <title>2026 AUTOMN GOLF ESCAPE - SNU GLP 31</title>
 <style>
@@ -51,6 +51,13 @@ html{scroll-behavior:auto}
 /* 제작 표기: 가장 위 안내줄 우측. 작은 화면에서도 날짜와 겹치지 않도록 배치합니다. */
 .topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:4px 18px;padding:6px 24px;letter-spacing:.06em}.topbar>span:first-child{justify-self:start}.topbar>span:nth-child(2){justify-self:center}.topbar .built-by{justify-self:end;white-space:nowrap;text-transform:none;font-size:10px;letter-spacing:.02em}.built-by strong{font-weight:700}
 @media(max-width:680px){.topbar{grid-template-columns:1fr auto;padding:5px 12px;gap:2px 8px}.topbar>span:first-child{grid-row:2;grid-column:1/-1;justify-self:center}.topbar>span:nth-child(2){grid-row:1;grid-column:1;justify-self:start}.topbar .built-by{grid-row:1;grid-column:2;justify-self:end;font-size:9px}}
+/* 조용한 여행자 명단과 사진 수첩 */
+.travelers{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:23px 0 8px;border-bottom:1px solid var(--line)}.travelers-label{font-size:12px;color:var(--green)}.travelers-label small{display:block;font-size:9px;letter-spacing:2px;color:#75796f;margin-top:4px}.travelers-list{list-style:none;margin:0 0 15px;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px 20px;font-size:13px}.gallery-intro{max-width:510px}.gallery-compose{border:1px solid var(--line);background:#efeee6;padding:24px;margin-bottom:28px}.gallery-compose summary{cursor:pointer;font-size:17px;font-weight:bold;color:var(--green);list-style-position:inside}.gallery-compose summary small{font-size:11px;font-weight:normal;margin-left:12px;color:#62685f}.gallery-compose[open] summary{margin-bottom:20px}.gallery-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px}.gallery-field{display:flex;flex-direction:column;gap:5px;font-size:12px}.gallery-field input,.gallery-field select,.comment-form input,.comment-form textarea{width:100%;font:inherit;font-size:14px;border:1px solid #cbcfc3;border-radius:0;background:#fffefa;color:var(--ink);padding:11px;min-height:44px}.gallery-field input[type=file]{padding:10px}.gallery-field.wide{grid-column:1/-1}.gallery-note{font-size:11px;color:#73796f;margin-top:12px}.gallery-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:28px 0 20px}.gallery-toolbar p{font-size:12px;color:#697469}.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px;align-items:start}.gallery-card{background:#fffefa;border:1px solid var(--line);min-width:0;overflow:hidden}.gallery-photo-open{border:0;padding:0;display:block;width:100%;background:#e4e6dc}.gallery-photo-open img{display:block;width:100%;height:255px;object-fit:cover}.gallery-card-body{padding:17px}.gallery-caption{font-size:15px;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;margin:0 0 8px}.gallery-meta{font-size:11px;color:#6b766a;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.gallery-card details{border-top:1px solid var(--line);margin:15px -17px -17px;padding:13px 17px}.gallery-card details>summary{font-size:12px;color:var(--green);cursor:pointer}.gallery-comments{margin:14px 0;list-style:none;padding:0}.gallery-comments li{font-size:12px;padding:10px 0;border-bottom:1px solid #e7e9df;overflow-wrap:anywhere;word-break:normal}.gallery-comments b{font-size:11px;margin-right:8px;color:var(--green)}.gallery-comments p{white-space:pre-wrap;margin-top:3px}.gallery-comments time{font-size:10px;color:#778070}.gallery-comment-status{font-size:11px;color:#6f766a;min-height:18px;margin-top:6px}.gallery-comment-status[data-error=true],#galleryUploadStatus[data-error=true],#galleryStatus[data-error=true]{color:#9a312d}.comment-form{display:grid;gap:9px;margin:13px 0 2px}.comment-form label{font-size:11px}.comment-form textarea{resize:vertical;min-height:76px}.comment-form .outline-btn{justify-self:start;font-size:12px}.gallery-empty{grid-column:1/-1;text-align:center;padding:65px 20px;border:1px dashed #c8cfbf;background:#efeee6}.gallery-empty strong{display:block;color:var(--green);font-size:19px;margin:10px}.gallery-empty p{font-size:13px;color:#6c7668}.gallery-selected{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.gallery-selected figure{margin:0;width:90px}.gallery-selected img{width:90px;height:75px;object-fit:cover;display:block}.gallery-selected figcaption{font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.gallery-upload-actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap}.gallery-upload-actions p{font-size:12px}.gallery-delete{border:0;background:none;text-decoration:underline;font-size:10px;padding:0;color:#8c6457;cursor:pointer}.gallery-comment-tools{display:flex;align-items:center;justify-content:space-between;gap:7px}.gallery-more{display:block;margin:25px auto}.photo-dialog{width:min(1000px,94vw);max-height:94vh;border:0;padding:16px;background:#f7f5ef}.photo-dialog::backdrop{background:#10281fe8}.photo-dialog img{display:block;max-width:100%;max-height:75vh;margin:auto;object-fit:contain}.photo-dialog header{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;margin-bottom:12px}.photo-dialog .outline-btn{min-height:40px}.photo-dialog p{margin-top:10px;overflow-wrap:anywhere;font-size:13px}.gallery-full-date{white-space:nowrap}
+@media(max-width:1100px){.nav{gap:15px}.nav-links{gap:14px}.nav-links a{font-size:12px}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.travelers{grid-template-columns:135px 1fr}.travelers-list{gap:10px}}
+@media(max-width:800px){.nav-links{gap:10px}.nav-links a{font-size:11px}.travelers{grid-template-columns:100px 1fr;gap:15px}.travelers-list{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:680px){.travelers{grid-template-columns:1fr;gap:13px;padding-top:19px}.travelers-label{display:flex;gap:10px;align-items:center}.travelers-label small{margin:0}.travelers-list{grid-template-columns:repeat(4,1fr);font-size:12px;gap:9px 5px}.gallery-compose{padding:18px}.gallery-compose summary small{display:block;margin-left:18px;margin-top:5px}.gallery-fields{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;gap:20px}.gallery-photo-open img{height:auto;max-height:430px;aspect-ratio:4/3}.gallery-toolbar{align-items:flex-start}.gallery-toolbar .outline-btn{font-size:11px;white-space:nowrap}.mobile-nav{overflow-x:auto;justify-content:space-between;gap:14px}.mobile-nav a{flex-shrink:0}.gallery-card-body{padding:17px}.gallery-compose .solid-btn{width:100%;justify-content:center}.gallery-upload-actions{gap:10px}.gallery-note{line-height:1.8}}
+@media print{.gallery-page{display:none!important}.travelers{grid-template-columns:130px 1fr;padding-top:10px}.travelers-list{font-size:10px}}
+
 </style>
 </head>
 <body>
@@ -58,9 +65,9 @@ html{scroll-behavior:auto}
 <header class="header"><div class="wrap nav">
   <a class="brand" href="#top" aria-label="여행 수첩 처음으로"><img class="brand-logo" src="data:image/png;base64,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" alt="SNU GLP 로고" width="46" height="43"><span><strong>SNU GLP 31</strong><small>2026 GOLF ESCAPE</small></span></a>
   <a class="trip-countdown" id="tripCountdown" href="#itinerary" aria-label="출발일까지 D-day"><small id="ddayLabel">출발까지</small><strong id="ddayValue">D-26</strong></a>
-  <nav class="nav-links" aria-label="주요 메뉴"><a href="#itinerary">여행 일정</a><a href="#groups">조편성</a><a href="#courses">골프 코스</a><a href="#dining">식당</a><a href="#stay">숙소·준비</a></nav>
+  <nav class="nav-links" aria-label="주요 메뉴"><a href="#itinerary">여행 일정</a><a href="#groups">조편성</a><a href="#courses">골프 코스</a><a href="#dining">식당</a><a href="#stay">숙소·준비</a><a href="#gallery">갤러리</a></nav>
   <button class="outline-btn" id="printBtn" type="button">일정 인쇄 ↗</button>
-</div><nav class="mobile-nav" aria-label="모바일 주요 메뉴"><a href="#top">홈</a><a href="#itinerary">일정·날씨</a><a href="#groups">조편성</a><a href="#courses">골프장</a><a href="#dining">식당</a><a href="#stay">숙소·준비</a></nav></header>
+</div><nav class="mobile-nav" aria-label="모바일 주요 메뉴"><a href="#top">홈</a><a href="#itinerary">일정·날씨</a><a href="#groups">조편성</a><a href="#courses">골프장</a><a href="#dining">식당</a><a href="#stay">숙소·준비</a><a href="#gallery">갤러리</a></nav></header>
 <main id="top" class="wrap">
 <section class="hero" data-page-view="top" aria-labelledby="heroTitle">
   <div class="hero-top"><div>
@@ -73,6 +80,7 @@ html{scroll-behavior:auto}
     <div class="stamp" aria-hidden="true">54 HOLES<small>秋のゴルフ旅</small></div><div class="art-caption"><span>가고시마 시내와 사쿠라지마</span><a href="https://commons.wikimedia.org/wiki/File:View_of_Sakurajima_from_Shiroyama_Park_Observatory_-_Jan_27,_2010.jpg" target="_blank" rel="noopener noreferrer">Photo: Jody McIntyre · CC BY-SA 2.0 ↗</a></div>
   </div></div>
   <div class="trip-stats"><div class="stat"><strong>04</strong><span><b>3박 4일</b><br>11.25 수 — 11.28 토</span></div><div class="stat"><strong>54</strong><span><b>세 번의 라운드</b><br>매일 18홀 · 셀프+카트</span></div><div class="stat"><strong>12</strong><span><b>함께하는 여행</b><br>12명 · 1인 1실 일정</span></div><div class="stat"><strong>♨</strong><span><b>히토요시 온천</b><br>Hotel Hananoshou 3박</span></div></div>
+  <aside class="travelers" aria-label="가나다순 여행자 명단"><div class="travelers-label"><b id="travelersCount">함께하는 12명</b><small>OUR TRAVELERS · 가나다순</small></div><ul class="travelers-list" id="travelersList"><li>김성수</li><li>김원기</li><li>신영태</li><li>윤금수</li><li>이억우</li><li>이용우</li><li>임수연</li><li>장환빈</li><li>정동헌</li><li>정진동</li><li>진영석</li><li>최진영</li></ul></aside>
 </section>
 
 <section id="itinerary" class="section" data-page-view="itinerary" aria-labelledby="itineraryTitle">
@@ -93,12 +101,12 @@ html{scroll-behavior:auto}
   <div class="print-only" id="printItinerary"></div>
 </section>
 
-<section class="section" id="groups" data-page-view="groups" aria-labelledby="groupsTitle"><div class="section-head"><div><div class="eyebrow muted">02 / OUR FOURBALLS</div><h2 id="groupsTitle">함께 걷는 페어웨이, 오늘의 조</h2></div><p>Google Sheets에서 확인한 최신 편성을 반영했습니다.<br>매 라운드 3개 조·각 4명, 날짜별 편성과 내 조를 확인하세요.</p></div><div class="groups-sync-bar no-print"><div><span class="sync-led" aria-hidden="true"></span><span id="groupsSyncStatus" role="status" data-state="snapshot">Drive 확인본 · 10/30 09:44 기준 / 자동 연결 전</span></div><div class="groups-sync-actions"><button type="button" class="outline-btn" id="refreshGroups">Drive 새로고침 ↻</button></div></div><div class="group-toolbar"><div><label class="small muted" for="playerSelect">내 조 찾기　</label><select id="playerSelect"><option value="">전체 참석자</option></select></div></div><div class="group-grid" id="groupGrid"></div><div class="group-summary" id="groupSummary" role="status"></div><p class="small muted" style="font-size:10px;margin-top:10px">조 번호는 편성 구분용입니다. 각 조의 정확한 출발 시각·OUT/IN은 골프장 확정표를 확인하세요. 날짜별 일정에서도 해당일 조편성을 볼 수 있습니다.</p><details class="pair-details"><summary>참석자별 조 번호와 동반자 요약 보기</summary><div class="roster-wrap"><table class="roster-table"><caption style="text-align:left;padding:8px 0">참석자별 조 번호·서로 다른 동반자 수</caption><thead><tr><th scope="col">번호</th><th scope="col">이름</th><th scope="col">11/26</th><th scope="col">11/27</th><th scope="col">11/28</th><th scope="col">동반자</th></tr></thead><tbody id="rosterBody"></tbody></table></div></details>
+<section class="section" id="groups" data-page-view="groups" aria-labelledby="groupsTitle"><div class="section-head"><div><div class="eyebrow muted">02 / OUR FOURBALLS</div><h2 id="groupsTitle">함께 걷는 페어웨이, 오늘의 조</h2></div><p>Google Sheets에서 확인한 최신 편성을 반영했습니다.<br>매 라운드 3개 조·각 4명, 날짜별 편성과 내 조를 확인하세요.</p></div><div class="groups-sync-bar no-print"><div><span class="sync-led" aria-hidden="true"></span><span id="groupsSyncStatus" role="status" data-state="snapshot">자동 갱신 대기 · 11/26 07:00부터 5분 간격 (한국·일본 시간)</span></div><div class="groups-sync-actions"><button type="button" class="outline-btn" id="refreshGroups">Drive 새로고침 ↻</button></div></div><div class="group-toolbar"><div><label class="small muted" for="playerSelect">내 조 찾기　</label><select id="playerSelect"><option value="">전체 참석자</option></select></div></div><div class="group-grid" id="groupGrid"></div><div class="group-summary" id="groupSummary" role="status"></div><p class="small muted" style="font-size:10px;margin-top:10px">조 번호는 편성 구분용입니다. 각 조의 정확한 출발 시각·OUT/IN은 골프장 확정표를 확인하세요. 날짜별 일정에서도 해당일 조편성을 볼 수 있습니다.</p><details class="pair-details"><summary>참석자별 조 번호와 동반자 요약 보기</summary><div class="roster-wrap"><table class="roster-table"><caption style="text-align:left;padding:8px 0">참석자별 조 번호·서로 다른 동반자 수</caption><thead><tr><th scope="col">번호</th><th scope="col">이름</th><th scope="col">11/26</th><th scope="col">11/27</th><th scope="col">11/28</th><th scope="col">동반자</th></tr></thead><tbody id="rosterBody"></tbody></table></div></details>
 <div class="scoreboard" id="scoreboard" aria-labelledby="scoreTitle">
  <div class="score-heading"><div><div class="eyebrow muted">ROUND RECORDS / 18 HOLES</div><h3 id="scoreTitle">날짜별 스코어보드</h3><p>기본 가나다순 · 18홀 총 스트로크 · 낮은 타수 우선</p></div><div class="score-actions"><button type="button" class="outline-btn" id="refreshScores">스코어 새로고침 ↻</button></div></div>
  <div class="score-controls"><div class="score-days" role="group" aria-label="스코어 날짜 선택"><button type="button" data-score-day="0" aria-pressed="true" aria-controls="scoreBody">11.26 목</button><button type="button" data-score-day="1" aria-pressed="false" aria-controls="scoreBody">11.27 금</button><button type="button" data-score-day="2" aria-pressed="false" aria-controls="scoreBody">11.28 토</button></div><label class="score-sort" for="scoreSort">정렬<select id="scoreSort"><option value="name">이름 · 가나다순</option><option value="strokes-asc">스트로크 · 낮은 순</option><option value="strokes-desc">스트로크 · 높은 순</option></select></label></div>
  <div class="score-table-wrap score-interactive"><table class="score-table"><caption id="scoreCaption">2026-11-26 · 18홀 총 스트로크</caption><thead><tr><th scope="col" id="scoreNameHead" aria-sort="ascending"><button type="button" id="scoreNameSort">이름 가나다순 ↕</button></th><th scope="col">조</th><th scope="col" id="scoreStrokesHead" aria-sort="none"><button type="button" id="scoreStrokeSort">스트로크<span id="scoreStrokeArrow"> ↕</span></button></th><th scope="col">순위</th></tr></thead><tbody id="scoreBody"></tbody></table></div>
- <div class="score-footer"><span id="scoresSyncStatus" role="status" data-state="snapshot">스코어 입력 대기 · 자동 연결 전</span><b id="scoreCount">기록 0 / 12명</b></div><p class="score-help">운영진이 입력한 날짜별 총 타수를 표시합니다. 미입력은 순위에서 제외하며 동타는 공동순위(예: 1위·1위·3위)입니다. 조 번호는 해당 날짜의 최신 편성을 따릅니다.</p><div class="print-scoreboards" id="printScoreboards"></div>
+ <div class="score-footer"><span id="scoresSyncStatus" role="status" data-state="snapshot">자동 갱신 대기 · 11/26 16:00부터 5분 간격 (한국·일본 시간)</span><b id="scoreCount">기록 0 / 12명</b></div><p class="score-help">운영진이 입력한 날짜별 총 타수를 표시합니다. 미입력은 순위에서 제외하며 동타는 공동순위(예: 1위·1위·3위)입니다. 조 번호는 해당 날짜의 최신 편성을 따릅니다.</p><div class="print-scoreboards" id="printScoreboards"></div>
 </div>
 </section>
 
@@ -117,6 +125,8 @@ html{scroll-behavior:auto}
   </div><p class="small muted" style="font-size:10px;margin-top:13px">영업시간·메뉴는 2026.10.28 확인한 공식 안내 기준이며 변경될 수 있습니다. 식당 후보의 차량 이동시간은 길찾기에서 확인할 수 있습니다. 일정 편입·예약·이동수단은 별도 확정이 필요합니다.</p>
 </section>
 
+
+
 <section class="stay" id="stay" data-page-view="stay" aria-labelledby="stayTitle"><div><div class="eyebrow">05 / A WARM END TO THE DAY</div><h2 id="stayTitle">히토요시에서 쉬어가는 하루.</h2><p>Hotel Hananoshou Resort · 호텔 하나노쇼<br>구마모토현 히토요시에서 3박. 시내를 내려다보는 언덕 위 온천호텔로, 골프 여행의 거점으로 머물기 좋은 숙소입니다. 가고시마 시내 숙소가 아닙니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="outline-btn" href="https://hotel-hananoshou.com/" target="_blank" rel="noopener noreferrer">호텔 공식 사이트 ↗</a><button type="button" class="outline-btn" id="copyAddress">일본어 주소 복사</button></div></div><dl class="stay-info"><div><dt>ADDRESS</dt><dd class="address">〒868-0044 熊本県人吉市東間下町3316-6</dd></div><div><dt>CONTACT</dt><dd><a href="tel:+81966221126">+81 966-22-1126</a></dd></div><div><dt>STAY / MEALS</dt><dd>11.25 체크인 — 11.28 체크아웃 · 1인 1실<br>원안 기준 11/26–28 조식 포함 · 석식 별도</dd></div><div><dt>BEFORE DEPARTURE</dt><dd>11/28 라운드 전 체크아웃·골프백/짐 적재 확인</dd></div></dl></section>
 
 
@@ -134,8 +144,27 @@ html{scroll-behavior:auto}
 </section>
 
 <section class="section bottom-grid" data-page-view="stay" aria-label="여행 준비와 확인사항"><div class="prep"><div class="eyebrow muted" style="margin-bottom:10px">PACK LIGHT, PLAY WELL</div><h3>출발 전, 하나씩 챙기기</h3><div class="checklist" id="checklist"></div><p class="check-progress" id="checkProgress" role="status"></p><p class="small muted" style="font-size:10px;margin-top:7px">체크 상태는 이 기기의 브라우저에만 저장됩니다.</p></div><div class="verify"><div class="eyebrow muted" style="margin-bottom:10px">GOOD TO KNOW</div><h3>확정 전에 확인할 것들</h3><ul><li><b>항공편:</b> 원안 ZE651 / ZE652. 귀국 시각에 모순이 있으므로 항공권으로 최종 확인하세요.</li><li><b>라운드:</b> 티오프 10:03 / 10:13 / 09:00은 원안 기준입니다. 11/28 15:00 출발 계획이 항공편 수속 마감과 맞는지 확인하세요.</li><li><b>이동:</b> 지도는 승용차 길찾기입니다. 단체 전용차·버스의 실제 이동시간, 유료도로, 휴게시간은 다를 수 있습니다.</li><li><b>식사:</b> 원안은 11/28 현지 중식 지원 1인 1,100엔 표기. 다른 중식과 석식·음료는 별도 비용 여부를 확인하세요.</li></ul></div></section>
+<section id="gallery" class="section gallery-page" data-page-view="gallery" aria-labelledby="galleryTitle">
+ <div class="section-head"><div><div class="eyebrow muted">06 / OUR TRAVEL ALBUM</div><h2 id="galleryTitle">우리의 가을, 함께 남기는 순간</h2></div><p class="gallery-intro">페어웨이의 풍경부터 함께한 저녁까지.<br>누구나 사진을 올리고, 사진 아래 짧은 댓글로 추억을 나눠보세요.</p></div>
+ <details class="gallery-compose" id="galleryCompose"><summary>사진 올리기 <small>로그인 없이 함께하는 여행 앨범</small></summary>
+ <form id="galleryUploadForm"><div class="gallery-fields">
+  <label class="gallery-field">올리는 분 이름 <input id="galleryAuthor" name="author" required maxlength="20" placeholder="이름 또는 별명" autocomplete="nickname"></label>
+  <label class="gallery-field">사진 속 날짜 <select id="galleryDay" name="day"><option value="">날짜 선택 안 함</option value="2026-11-25">11/25 · 가고시마로 출발</option><option value="2026-11-26">11/26 · 첫 번째 라운드</option><option value="2026-11-27">11/27 · 두 번째 라운드</option><option value="2026-11-28">11/28 · 마지막 라운드</option></select></label>
+  <label class="gallery-field wide">사진 한 줄 소개 · 선택 <input id="galleryCaption" name="caption" maxlength="160" placeholder="이 순간을 기억할 짧은 이야기를 남겨주세요."></label>
+  <label class="gallery-field wide">사진 선택 · 한 번에 최대 8장 <input id="galleryFiles" type="file" name="photos" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple required aria-describedby="galleryFileNote"></label>
+ </div><p class="gallery-note" id="galleryFileNote">사진 한 장당 최대 20MB · 업로드 전에 웹용으로 줄여 저장합니다. HEIC는 기기 지원에 따라 JPEG로 변환해주세요.</p>
+ <div class="gallery-selected" id="gallerySelected" aria-label="선택한 사진 미리보기"></div>
+ <div class="gallery-upload-actions"><button class="solid-btn" id="galleryUploadButton" type="submit">사진 공유하기 ↑</button><p id="galleryUploadStatus" role="status" aria-live="polite"></p></div>
+ <p class="gallery-note">사진과 댓글은 이 페이지를 방문하는 누구나 볼 수 있어요. 이름은 직접 입력하며, 이 기기에서 등록한 사진과 댓글은 삭제할 수 있습니다. 브라우저 데이터를 지우면 삭제 권한도 사라집니다.</p>
+ </form></details>
+ <div class="gallery-toolbar"><p id="galleryStatus" role="status" aria-live="polite">함께한 순간을 불러옵니다.</p><button class="outline-btn" id="galleryRefresh" type="button">사진 새로고침 ↻</button></div>
+ <div class="gallery-grid" id="galleryGrid"></div>
+ <button class="outline-btn gallery-more" type="button" id="galleryMore" hidden>이전 사진 더 보기 ↓</button>
+ <dialog class="photo-dialog" id="photoDialog"><header><span id="photoDialogTitle">여행 사진</span><button class="outline-btn" type="button" id="photoDialogClose">닫기 ×</button></header><img id="photoDialogImage" alt=""><p id="photoDialogCaption"></p></dialog>
+</section>
+
 <details class="source-box"><summary>사진 출처·시설 정보·날씨 및 지도 안내</summary><div class="source-content"><p>일정·인원·숙박·식사 포함 여부·이동시간의 기준은 사용자가 제공한 2026.11.25–28 여행 일정표입니다. 원안 자체가 현지 사정에 따른 변경 가능성을 명시하고 있어 예약 확정 정보와 구분했습니다. 참가자 이름은 사용자가 추가로 제공한 한글 명단을 기준으로 조편성에 반영했습니다. 여행사 담당자의 연락처·계좌정보는 게시 페이지에 포함하지 않았습니다.</p><p style="margin-top:10px">날씨는 Open-Meteo의 최대 16일 예보에서 해당 날짜가 제공될 때 표시합니다. 범위 밖 날짜는 ‘예보 대기’, 지난 날짜는 ‘예보 기간 종료’, 접속 오류는 ‘불러오기 실패’로 표시합니다. 풍속 단위는 m/s, 시간대는 Asia/Tokyo입니다. 예보를 받을 때마다 갱신하며 가상의 일별 예보나 평년값을 예보처럼 표시하지 않습니다.</p><p style="margin-top:10px">지도는 Google Maps를 사용합니다. 지도 안에 경로가 표시되지 않는 브라우저에서는 ‘Google 지도 길찾기’를 눌러 경로와 최신 예상시간을 확인하세요. 페이지의 분 단위 이동시간은 실시간 교통 예측이 아닌 원안 기준 계획값입니다. 복귀시간은 출발 때와 동일 구간을 역방향으로 적용한 참고값입니다.</p><p style="margin-top:10px"><b>사진 출처</b>　첫 화면: <a href="https://commons.wikimedia.org/wiki/File:View_of_Sakurajima_from_Shiroyama_Park_Observatory_-_Jan_27,_2010.jpg" target="_blank" rel="noopener noreferrer">Jody McIntyre, View of Sakurajima from Shiroyama Park Observatory (2010.01.27)</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>. 사진 파일은 수정하지 않았으며 화면 비율에 맞춰 일부 영역이 잘려 보일 수 있습니다. 해당 사진의 표시상 크롭에도 같은 라이선스를 적용합니다. 골프장 사진은 각 코스의 공식 사이트에서 해당 코스임을 확인한 이미지이며, 각 카드의 공식 코스 정보에서 원출처를 확인할 수 있습니다. 로고는 사용자가 첨부한 이미지입니다.</p><div class="source-links"><a href="https://kokusaigolf.com/access.html" target="_blank" rel="noopener noreferrer">가고시마 국제 GC</a><a href="https://www.mizobecc.co.jp/access.html" target="_blank" rel="noopener noreferrer">미조베 CC</a><a href="https://cherry-group.jp/course_hitoyoshi/access.html" target="_blank" rel="noopener noreferrer">체리골프 히토요시</a><a href="https://hotel-hananoshou.com/contact.html" target="_blank" rel="noopener noreferrer">호텔 주소·연락처</a><a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener noreferrer">날씨 API 안내</a><a href="https://developers.google.com/maps/documentation/urls/get-started" target="_blank" rel="noopener noreferrer">Google Maps URLs</a></div></div></details>
-</main><footer><div class="wrap"><span>SNU GLP 31 · 2026 AUTOMN GOLF ESCAPE</span><span>일정표를 바탕으로 만든 여행 수첩 · 정보 확인 2026.10.28 · SNU GLP 31 · BlueStripe·집결안내 v9 <a class="mobile-top" href="#top" style="margin-left:12px">맨 위로 ↑</a></span></div></footer><div class="toast" id="toast" role="status" hidden></div>
+</main><footer><div class="wrap"><span>SNU GLP 31 · 2026 AUTOMN GOLF ESCAPE</span><span>일정표를 바탕으로 만든 여행 수첩 · 정보 확인 2026.10.28 · SNU GLP 31 · 사진·댓글·예약갱신 v11 <a class="mobile-top" href="#top" style="margin-left:12px">맨 위로 ↑</a></span></div></footer><div class="toast" id="toast" role="status" hidden></div>
 <script>
 'use strict';
 /* ===== 수정할 여행 데이터: 날짜, 항공편, 코스, 이동시간을 여기서 편집하세요. ===== */
@@ -389,7 +418,7 @@ function buildPrintItinerary(){
  $('printItinerary').innerHTML=DAYS.map(d=>`<section class="print-day"><h3>${d.date} (${d.weekday}) · ${d.title}</h3><table><tbody>${d.events.map(e=>`<tr><td>${e.time}</td><td><b>${e.title}</b><br>${e.text}</td></tr>`).join('')}</tbody></table><p class="print-route">${d.routes.map(r=>`${PLACES[r.from].name} → ${PLACES[r.to].name}: 약 ${r.minutes}분${r.reverse?' (역방향 참고값)':''}`).join(' / ')} · 일정표 기준, 교통 미반영</p></section>`).join('');
 }
 // 메뉴를 각 화면으로 전환한다. 모든 화면의 내용은 같은 HTML에 유지한다.
-const VIEW_LABELS={top:'여행 수첩',itinerary:'여행 일정',groups:'조편성',courses:'골프 코스',dining:'식당',stay:'숙소·준비'};
+const VIEW_LABELS={top:'여행 수첩',itinerary:'여행 일정',groups:'조편성',courses:'골프 코스',dining:'식당',stay:'숙소·준비',gallery:'갤러리'};
 function parseRoute(hash){
  const day=String(hash).match(/^#day-([1-4])$/);
  if(day)return {view:'itinerary',day:Number(day[1])-1};
@@ -409,7 +438,8 @@ function applyRoute({scroll=true}={}){
  const route=parseRoute(location.hash);
  if(route.day!==null&&route.day!==activeDay)selectDay(route.day,{updateHash:false});
  showView(route.view,{scroll});
- if(['groups','itinerary'].includes(route.view)&&Date.now()-groupsLastCheck>5000)syncGroups();
+ if(route.view==='gallery')void galleryLoad();
+ void syncGroups();
 }
 function setupNavigation(){
  document.addEventListener('click',event=>{
@@ -491,8 +521,8 @@ function renderScoreboard() {
  $('scoreStrokesHead').setAttribute('aria-sort',scoreSort==='strokes-asc'?'ascending':scoreSort==='strokes-desc'?'descending':'none');
  $('scoreStrokeArrow').textContent=scoreSort==='strokes-asc'?' ↑':scoreSort==='strokes-desc'?' ↓':' ↕';
  document.querySelectorAll('[data-score-day]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.scoreDay)===activeScoreDay)));
- const message=scoresState==='live'?`Drive 스코어 확인 · ${scoresCheckedAt} · 30초마다 갱신`:scoresState==='legacy'?'스코어 연결 대기 · 연결 코드 업데이트 필요':scoresState==='error'?'스코어 확인 필요 · 마지막 정상 기록 유지':'스코어 입력 대기 · 자동 연결 전';
- $('scoresSyncStatus').textContent=message;$('scoresSyncStatus').dataset.state=scoresState;
+ const status=datasetSyncStatus('scores');
+ $('scoresSyncStatus').textContent=status.text;$('scoresSyncStatus').dataset.state=status.state;
  $('printScoreboards').innerHTML=DAYS.slice(1).map((d,i)=>`<section class="print-day"><h3>${d.date} · 스코어보드</h3><table class="score-table"><thead><tr><th>이름</th><th>조</th><th>스트로크</th><th>순위</th></tr></thead><tbody>${scoreBoardRows(i).map(scoreRowHTML).join('')}</tbody></table></section>`).join('');
 }
 function setupScoreboard() {
@@ -500,7 +530,7 @@ function setupScoreboard() {
  $('scoreSort').addEventListener('change',()=>{scoreSort=$('scoreSort').value;renderScoreboard();});
  $('scoreNameSort').addEventListener('click',()=>{scoreSort='name';renderScoreboard();});
  $('scoreStrokeSort').addEventListener('click',()=>{scoreSort=scoreSort==='strokes-asc'?'strokes-desc':'strokes-asc';renderScoreboard();});
- $('refreshScores').addEventListener('click',()=>syncGroups({manual:true}));
+ $('refreshScores').addEventListener('click',()=>syncGroups({manual:true,target:'scores'}));
  renderScoreboard();
 }
 
@@ -508,8 +538,12 @@ function setupScoreboard() {
 // 실제 배포 URL 연결 완료. 조회 실패 시 아래 Drive 확인본을 표시합니다.
 const GROUPS_SYNC_URL = 'https://script.google.com/macros/s/AKfycbymz38q0WzKfhO5K7qPBp19XSwF9r8C0ZYb4m28ImUhEsMVVJ410MZDxJC4rWmPQi8ODA/exec';
 const GROUPS_SNAPSHOT_AS_OF = '2026-10-30T00:44:49.652Z';
-const GROUPS_REFRESH_MS = 30000;
-let groupsSyncBusy=false,groupsLastCheck=0,groupsHaveSynced=false;
+const GROUPS_REFRESH_MS = 5*60*1000;
+const SYNC_START_MS={groups:Date.parse('2026-11-26T07:00:00+09:00'),scores:Date.parse('2026-11-26T16:00:00+09:00')};
+const SYNC_START_LABEL={groups:'11/26 07:00',scores:'11/26 16:00'};
+let groupsSyncBusy=false,groupsLastCheck=0,scoresLastCheck=0,groupsHaveSynced=false,groupsState='snapshot';
+let syncBusyTargets=[],autoSyncTimer=null;
+const autoLastAttempts={groups:null,scores:null};
 function validateGroupsPayload(payload) {
  if (!payload || payload.ok!==true || ![1,2].includes(payload.schemaVersion) ||
   JSON.stringify(payload.roundDates)!==JSON.stringify(DAYS.slice(1).map(d=>d.date)) ||
@@ -540,22 +574,26 @@ function renderDayGroups() {
  $('dayGroups').hidden=activeDay===0;
  if(activeDay>0)$('dayGroups').innerHTML='<h4>오늘의 조편성 · 각 4명</h4>'+GROUPS[activeDay-1].map((g,i)=>`<p><strong>${i+1}조</strong>${g.map(escapeHTML).join(' · ')}</p>`).join('')+'<a href="#groups">전체 조편성 · 내 조 찾기 ↓</a>';
 }
-function applyGroupsPayload(payload) {
- const next=validateGroupsPayload(payload),changed=JSON.stringify(next)!==JSON.stringify(GROUPS);
+function applyGroupsPayload(payload,{updateGroups=true,updateScores=true,now=Date.now()}={}) {
+ const next=validateGroupsPayload(payload),changed=updateGroups&&JSON.stringify(next)!==JSON.stringify(GROUPS);
  let nextScores=null,scoreChanged=false;
- if(payload.schemaVersion===2&&payload.scoresState==='ready') {
-  try {nextScores=validateScoresPayload(payload.scores,next[0].flat());scoreChanged=JSON.stringify(nextScores)!==JSON.stringify(SCORES);scoresState='live';scoresCheckedAt=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date());}
-  catch {scoresState='error';}
- } else scoresState=payload.schemaVersion===1?'legacy':'error';
+ if(updateScores) {
+  if(payload.schemaVersion===2&&payload.scoresState==='ready') {
+   try {nextScores=validateScoresPayload(payload.scores,updateGroups?next[0].flat():PLAYERS);scoreChanged=JSON.stringify(nextScores)!==JSON.stringify(SCORES);scoresState='live';scoresLastCheck=now;scoresCheckedAt=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date(now));}
+   catch {scoresState='error';}
+  } else scoresState=payload.schemaVersion===1?'legacy':'error';
+ }
  if(changed) {
   const roster=next[0].flat();
   PLAYERS=PLAYERS.filter(n=>roster.includes(n)).concat(roster.filter(n=>!PLAYERS.includes(n)));
-  GROUPS=next;refreshPlayerOptions();renderGroups();renderDayGroups();
+  GROUPS=next;refreshPlayerOptions();renderGroups();renderDayGroups();renderTravelers();
  }
+ if(updateGroups){groupsState='live';groupsLastCheck=now;groupsHaveSynced=true;}
  if(nextScores)SCORES=nextScores;
  renderScoreboard();
  return changed||scoreChanged;
 }
+
 function trustedGroupsEndpoint(raw) {
  try {const u=new URL(raw);return u.protocol==='https:'&&u.hostname==='script.google.com'&&/^\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(u.pathname)&&!u.search&&!u.hash?u:null;}catch{return null;}
 }
@@ -571,38 +609,212 @@ function loadGroupsJSONP(endpoint) {
  });
 }
 function setGroupsSyncState(text,state) {$('groupsSyncStatus').textContent=text;$('groupsSyncStatus').dataset.state=state;}
-async function syncGroups({manual=false}={}) {
+function datasetSyncStatus(kind,now=Date.now()) {
+ const state=kind==='groups'?groupsState:scoresState;
+ const checked=kind==='groups'?groupsLastCheck:scoresLastCheck;
+ const start=SYNC_START_MS[kind],plan=SYNC_START_LABEL[kind];
+ if(groupsSyncBusy&&syncBusyTargets.includes(kind))return {state:'loading',text:(kind==='groups'?'조편성':'스코어')+' 확인 중…'};
+ if(state==='error')return {state:'error',text:(kind==='groups'?'마지막 정상 조편성':'마지막 정상 스코어')+' 유지 · 연결/입력 확인 필요'};
+ if(state==='legacy')return {state:'legacy',text:'스코어 연결 대기 · 연결 코드 업데이트 필요'};
+ if(checked) {
+  const label=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date(checked));
+  return {state:'live',text:(kind==='groups'?'연결됨':'Drive 스코어 확인')+' · '+label+' 확인 · '+(now<start?'자동 갱신 '+plan+'부터 5분 간격':'5분마다 갱신')};
+ }
+ if(now<start)return {state:'waiting',text:'자동 갱신 대기 · '+plan+'부터 5분 간격 (한국·일본 시간)'};
+ return {state:'ready',text:'자동 갱신 준비 · 5분 간격 (한국·일본 시간)'};
+}
+function refreshSyncUI() {
+ const state=datasetSyncStatus('groups');setGroupsSyncState(state.text,state.state);renderScoreboard();
+}
+function isAutoSyncVisible() {
+ return !document.hidden&&['groups','itinerary'].includes(parseRoute(location.hash).view);
+}
+function autoSyncTargets(now=Date.now()) {
+ return ['groups','scores'].filter(kind=>now>=SYNC_START_MS[kind]&&(autoLastAttempts[kind]===null||now-autoLastAttempts[kind]>=GROUPS_REFRESH_MS));
+}
+function scheduleNextAutoSync() {
+ clearTimeout(autoSyncTimer);autoSyncTimer=null;
+ if(!isAutoSyncVisible()||groupsSyncBusy)return;
+ const now=Date.now();
+ const next=Math.min(...['groups','scores'].map(kind=>Math.max(SYNC_START_MS[kind],autoLastAttempts[kind]===null?now:autoLastAttempts[kind]+GROUPS_REFRESH_MS)));
+ // 장기간 대기할 때 브라우저 setTimeout의 32비트 지연 한도를 넘지 않습니다.
+ autoSyncTimer=setTimeout(()=>{autoSyncTimer=null;void syncGroups();},Math.min(Math.max(next-now,0),3600000));
+}
+async function syncGroups({manual=false,target='both'}={}) {
  if(groupsSyncBusy)return;
+ const now=Date.now();
+ const targets=manual?(target==='both'?['groups','scores']:[target]):isAutoSyncVisible()?autoSyncTargets(now):[];
+ if(!targets.length){refreshSyncUI();scheduleNextAutoSync();return;}
  const endpoint=trustedGroupsEndpoint(GROUPS_SYNC_URL);
+ // 수동 조회도 이미 시작한 자동 주기의 중복 호출을 피합니다. 시작 전 수동 조회는 시작 시각을 미루지 않습니다.
+ targets.forEach(kind=>{if(now>=SYNC_START_MS[kind])autoLastAttempts[kind]=now;});
  if(!endpoint) {
-  setGroupsSyncState('Drive 확인본 · 10/30 09:44 기준 / 자동 연결 전','snapshot');
-  if(manual)notify('최신 확인본이 표시 중입니다. 자동 연결은 운영진 설정 후 활성화됩니다.');
+  if(targets.includes('groups'))groupsState='error';
+  if(targets.includes('scores'))scoresState='error';
+  refreshSyncUI();scheduleNextAutoSync();
+  if(manual)notify('연결 주소를 확인하세요. 마지막 정상 데이터를 유지합니다.');
   return;
  }
- groupsSyncBusy=true;$('refreshGroups').disabled=true;$('refreshScores').disabled=true;
- setGroupsSyncState('Google Sheets 조편성·스코어 확인 중…','loading');
+ groupsSyncBusy=true;syncBusyTargets=targets;$('refreshGroups').disabled=true;$('refreshScores').disabled=true;refreshSyncUI();
  try {
-  const payload=await loadGroupsJSONP(endpoint),changed=applyGroupsPayload(payload);
-  groupsLastCheck=Date.now();groupsHaveSynced=true;
-  const label=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date(groupsLastCheck));
-  setGroupsSyncState(`연결됨 · ${label} 확인 · 30초마다 갱신`,'live');
-  if(manual)notify(scoresState==='error'?'조편성은 확인했습니다. 스코어 입력 형식을 확인하세요.':scoresState==='legacy'?'조편성 확인 완료. 스코어 연결 코드를 업데이트해 주세요.':changed?'최신 조편성·스코어를 반영했습니다.':'현재 조편성·스코어가 최신입니다.');
+  const payload=await loadGroupsJSONP(endpoint);
+  const changed=applyGroupsPayload(payload,{updateGroups:targets.includes('groups'),updateScores:targets.includes('scores'),now:Date.now()});
+  if(manual) {
+   if(targets.includes('scores')&&['error','legacy'].includes(scoresState))notify('스코어 연결 또는 입력 형식을 확인하세요. 마지막 정상 기록을 유지합니다.');
+   else notify(changed?'최신 '+(target==='groups'?'조편성':target==='scores'?'스코어':'조편성·스코어')+'을 반영했습니다.':'현재 표시 데이터가 최신입니다.');
+  }
  } catch {
-  scoresState='error';renderScoreboard();
-  setGroupsSyncState((groupsHaveSynced?'마지막 정상 조편성 유지':'Drive 확인본 유지')+' · 연결 확인 필요','error');
-  if(manual)notify('조편성을 불러오지 못해 마지막 정상 편성을 유지합니다.');
- } finally {groupsSyncBusy=false;$('refreshGroups').disabled=false;$('refreshScores').disabled=false;}
+  if(targets.includes('groups'))groupsState='error';
+  if(targets.includes('scores'))scoresState='error';
+  if(manual)notify('조회에 실패해 마지막 정상 데이터를 유지합니다.');
+ } finally {
+  groupsSyncBusy=false;syncBusyTargets=[];$('refreshGroups').disabled=false;$('refreshScores').disabled=false;refreshSyncUI();scheduleNextAutoSync();
+ }
 }
 function setupLiveFeatures() {
  updateCountdown();setInterval(updateCountdown,30000);
- $('refreshGroups').addEventListener('click',()=>syncGroups({manual:true}));
- syncGroups();
- setInterval(()=>{const view=parseRoute(location.hash).view;if(!document.hidden&&['groups','itinerary'].includes(view))syncGroups();},GROUPS_REFRESH_MS);
- const onVisible=()=>{updateCountdown();if(!document.hidden&&Date.now()-groupsLastCheck>5000)syncGroups();};
+ $('refreshGroups').addEventListener('click',()=>syncGroups({manual:true,target:'groups'}));
+ refreshSyncUI();void syncGroups();
+ const onVisible=()=>{updateCountdown();void syncGroups();};
  document.addEventListener('visibilitychange',onVisible);window.addEventListener('focus',onVisible);
 }
 
-buildWeatherCards();renderGroups();renderPacking();buildPrintItinerary();
+// ===== 공용 여행 앨범: 사진 R2 / 댓글 D1, 로그인 없이 공개 =====
+const GALLERY_API='https://snu-glp31-travel-gallery.robustchub.chatgpt.site';
+let galleryPhotos=[],galleryCursor=null,galleryLoading=false,galleryLastLoaded=0,gallerySelection=[],galleryPreviewURLs=[],galleryUploaderBusy=false,galleryIdentity=null;
+const galleryOwn={photos:new Set(),comments:new Set()};
+function renderTravelers(){
+ const names=PLAYERS.slice().sort((a,b)=>a.localeCompare(b,'ko-KR'));
+ $('travelersList').innerHTML=names.map(name=>`<li>${escapeHTML(name)}</li>`).join('');
+ $('travelersCount').textContent=`함께하는 ${names.length}명`;
+}
+function galleryUUID(){
+ if(typeof crypto.randomUUID==='function')return crypto.randomUUID();
+ const bytes=crypto.getRandomValues(new Uint8Array(16));bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;const hex=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');return hex.slice(0,8)+'-'+hex.slice(8,12)+'-'+hex.slice(12,16)+'-'+hex.slice(16,20)+'-'+hex.slice(20);
+}
+function galleryKey(){
+ if(galleryIdentity)return galleryIdentity;
+ try{const v=localStorage.getItem('glp31.gallery.identity');if(v&&/^[a-zA-Z0-9_-]{32,128}$/.test(v))galleryIdentity=v;}catch{}
+ if(!galleryIdentity){galleryIdentity=galleryUUID().replace(/-/g,'')+galleryUUID().replace(/-/g,'');try{localStorage.setItem('glp31.gallery.identity',galleryIdentity)}catch{}}
+ return galleryIdentity;
+}
+function gallerySaveOwn(kind,id){galleryOwn[kind].add(id);try{localStorage.setItem('glp31.gallery.own.'+kind,JSON.stringify([...galleryOwn[kind]]))}catch{}}
+function galleryNickname(){try{return localStorage.getItem('glp31.gallery.nickname')||''}catch{return''}}
+function gallerySaveNickname(name){try{localStorage.setItem('glp31.gallery.nickname',name)}catch{}}
+function galleryDate(ms){return new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(ms))}
+async function galleryRequest(path,options={}){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),60000);
+ try{
+  const response=await fetch(GALLERY_API+'/api/gallery'+path,{...options,signal:controller.signal,cache:'no-store'});
+  let payload;try{payload=await response.json()}catch{throw Error('갤러리에 연결하지 못했습니다. 잠시 후 다시 시도해주세요.')}
+  if(!response.ok)throw Error(payload.error||'등록하지 못했습니다. 다시 시도해주세요.');return payload;
+ }catch(e){if(e.name==='AbortError')throw Error('연결이 오래 걸립니다. 네트워크를 확인하고 다시 시도해주세요.');throw e}
+ finally{clearTimeout(timer)}
+}
+function galleryCard(photo){
+ const figure=document.createElement('article');figure.className='gallery-card';figure.dataset.photoId=photo.id;
+ const day=photo.day?`${Number(photo.day.slice(5,7))}/${Number(photo.day.slice(8,10))}의 순간`:'여행의 순간';
+ figure.innerHTML=`<button class="gallery-photo-open" type="button" aria-label="${escapeHTML(photo.caption||day)} 크게 보기"><img loading="lazy" decoding="async" src="${GALLERY_API}/api/gallery/media/${encodeURIComponent(photo.id)}" alt="${escapeHTML(photo.caption||day)}"></button><div class="gallery-card-body">${photo.caption?`<p class="gallery-caption">${escapeHTML(photo.caption)}</p>`:''}<div class="gallery-meta"><span>${escapeHTML(photo.author)} · ${day}</span><time datetime="${new Date(photo.createdAt).toISOString()}">${escapeHTML(galleryDate(photo.createdAt))}</time></div>${galleryOwn.photos.has(photo.id)?'<button class="gallery-delete photo-delete" type="button">내 사진 삭제</button>':''}<details class="gallery-comment-details"><summary>댓글 <span class="comment-count">${photo.commentCount||0}</span>개 · 짧은 이야기 남기기</summary><ul class="gallery-comments"></ul><button class="gallery-delete comments-older" type="button" hidden>이전 댓글 보기</button><form class="comment-form"><label>댓글 작성자<input name="author" maxlength="20" required placeholder="이름 또는 별명" autocomplete="nickname" value="${escapeHTML(galleryNickname())}"></label><label>짧은 댓글 · 120자 이내<textarea name="body" maxlength="120" required rows="2" placeholder="이 순간에 한마디 남겨주세요."></textarea></label><button class="outline-btn" type="submit">댓글 남기기</button></form><p class="gallery-comment-status" role="status" aria-live="polite"></p></details></div>`;
+ const details=figure.querySelector('details');details.addEventListener('toggle',()=>{if(details.open&&!details.dataset.loaded)void galleryLoadComments(figure,photo.id)});
+ figure.querySelector('.comment-form').addEventListener('submit',event=>galleryPostComment(event,figure,photo.id));
+ figure.querySelector('.gallery-photo-open').addEventListener('click',()=>{const dialog=$('photoDialog');$('photoDialogImage').src=GALLERY_API+'/api/gallery/media/'+encodeURIComponent(photo.id);$('photoDialogImage').alt=photo.caption||day;$('photoDialogTitle').textContent=photo.author+' · '+day;$('photoDialogCaption').textContent=photo.caption;dialog.showModal()});
+ figure.querySelector('.photo-delete')?.addEventListener('click',()=>galleryDeletePhoto(photo.id,figure));
+ figure.querySelector('.comments-older').addEventListener('click',()=>galleryLoadComments(figure,photo.id,{older:true}));
+ return figure;
+}
+async function galleryLoad({more=false,force=false}={}){
+ if(galleryLoading||(!force&&!more&&galleryLastLoaded&&Date.now()-galleryLastLoaded<60000))return;
+ galleryLoading=true;$('galleryRefresh').disabled=true;$('galleryMore').disabled=true;$('galleryStatus').textContent='사진을 불러오는 중입니다.';$('galleryStatus').dataset.error='false';
+ try{
+  const data=await galleryRequest('/photos'+(more&&galleryCursor?'?cursor='+encodeURIComponent(galleryCursor):''));
+  if(!Array.isArray(data.photos))throw Error('사진 정보를 확인하지 못했습니다.');
+  if(!more){galleryPhotos=[];$('galleryGrid').replaceChildren()}
+  for(const p of data.photos){if(galleryPhotos.some(item=>item.id===p.id))continue;galleryPhotos.push(p);$('galleryGrid').append(galleryCard(p))}
+  galleryCursor=data.nextCursor;galleryLastLoaded=Date.now();$('galleryMore').hidden=!galleryCursor;
+  $('galleryStatus').textContent=galleryPhotos.length?`${galleryPhotos.length}장의 추억 · 최근 공유한 사진부터`:'첫 번째 여행 사진을 기다립니다.';
+  if(!galleryPhotos.length)$('galleryGrid').innerHTML='<div class="gallery-empty"><div class="eyebrow muted">OUR FIRST MEMORY</div><strong>앨범의 첫 장을 채워주세요.</strong><p>위의 ‘사진 올리기’에서 우리 여행의 순간을 공유해보세요.</p></div>';
+ }catch(e){$('galleryStatus').textContent=e.message||'사진을 불러오지 못했습니다. 새로고침해주세요.';$('galleryStatus').dataset.error='true';if(!galleryPhotos.length)$('galleryGrid').innerHTML='<div class="gallery-empty"><strong>잠시 연결이 원활하지 않아요.</strong><p>사진 새로고침을 눌러 다시 불러올 수 있습니다.</p></div>'}
+ finally{galleryLoading=false;$('galleryRefresh').disabled=false;$('galleryMore').disabled=false}
+}
+function galleryCommentItem(comment,figure){
+ const li=document.createElement('li');li.dataset.commentId=comment.id;li.dataset.createdAt=comment.createdAt;
+ li.innerHTML=`<div class="gallery-comment-tools"><div><b>${escapeHTML(comment.author)}</b><time datetime="${new Date(comment.createdAt).toISOString()}">${escapeHTML(galleryDate(comment.createdAt))}</time></div>${galleryOwn.comments.has(comment.id)?'<button type="button" class="gallery-delete">삭제</button>':''}</div><p>${escapeHTML(comment.body)}</p>`;
+ li.querySelector('button')?.addEventListener('click',async event=>{if(!confirm('내 댓글을 삭제할까요?'))return;const button=event.currentTarget;button.disabled=true;try{await galleryRequest('/comments/'+encodeURIComponent(comment.id),{method:'DELETE',headers:{'X-Delete-Token':galleryKey()}});li.remove();const count=figure.querySelector('.comment-count');count.textContent=Math.max(0,Number(count.textContent)-1)}catch(e){figure.querySelector('.gallery-comment-status').textContent=e.message;button.disabled=false}});
+ return li;
+}
+async function galleryLoadComments(figure,id,{older=false}={}){
+ const status=figure.querySelector('.gallery-comment-status'),details=figure.querySelector('details'),list=figure.querySelector('.gallery-comments'),olderBtn=figure.querySelector('.comments-older');
+ if(details.dataset.loading)return;details.dataset.loading='true';status.textContent='댓글을 불러옵니다.';status.dataset.error='false';
+ try{
+  const before=older&&list.firstElementChild?Number(list.firstElementChild.dataset.createdAt):null;
+  const data=await galleryRequest('/photos/'+encodeURIComponent(id)+'/comments'+(before?'?before='+before:''));
+  if(!older)list.replaceChildren();const fragment=document.createDocumentFragment();for(const c of data.comments){if(!list.querySelector(`[data-comment-id="${c.id}"]`))fragment.append(galleryCommentItem(c,figure))}if(older)list.prepend(fragment);else list.append(fragment);
+  olderBtn.hidden=!data.hasMore;details.dataset.loaded='true';status.textContent=list.children.length?'':'아직 댓글이 없어요. 첫 이야기를 남겨주세요.';
+ }catch(e){status.textContent=e.message;status.dataset.error='true';details.dataset.loaded='';}
+ finally{delete details.dataset.loading}
+}
+async function galleryPostComment(event,figure,id){
+ event.preventDefault();const form=event.currentTarget,button=form.querySelector('button'),status=figure.querySelector('.gallery-comment-status'),author=form.elements.author.value.trim(),body=form.elements.body.value.trim();
+ if(!author||!body||button.disabled)return;
+ button.disabled=true;status.textContent='댓글을 남기는 중입니다.';status.dataset.error='false';
+ const signature=author+'\n'+body;
+ if(form.dataset.pendingSignature!==signature){form.dataset.pendingSignature=signature;form.dataset.pendingKey=galleryUUID()}
+ try{
+  const data=await galleryRequest('/photos/'+encodeURIComponent(id)+'/comments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({author,body,requestKey:form.dataset.pendingKey,deleteToken:galleryKey()})});
+  gallerySaveNickname(author);gallerySaveOwn('comments',data.comment.id);form.elements.body.value='';delete form.dataset.pendingKey;delete form.dataset.pendingSignature;
+  const list=figure.querySelector('.gallery-comments');if(!list.querySelector(`[data-comment-id="${data.comment.id}"]`)){list.append(galleryCommentItem(data.comment,figure));const count=figure.querySelector('.comment-count');count.textContent=Number(count.textContent)+1}
+  status.textContent='댓글을 남겼습니다.';
+ }catch(e){status.textContent=e.message;status.dataset.error='true'}finally{button.disabled=false}
+}
+function galleryPreview(){
+ galleryPreviewURLs.forEach(url=>URL.revokeObjectURL(url));galleryPreviewURLs=[];$('gallerySelected').replaceChildren();
+ for(const item of gallerySelection){const url=URL.createObjectURL(item.file);galleryPreviewURLs.push(url);const f=document.createElement('figure'),img=document.createElement('img'),caption=document.createElement('figcaption');img.src=url;img.alt='선택한 사진';caption.textContent=item.file.name;f.append(img,caption);$('gallerySelected').append(f)}
+}
+async function galleryCompress(file){
+ if(file.size>20*1024*1024)throw Error(file.name+' · 사진 한 장은 20MB 이하여야 합니다.');
+ let bitmap;
+ try{bitmap=await createImageBitmap(file)}catch{
+  const url=URL.createObjectURL(file);try{const img=new Image();img.src=url;await img.decode();bitmap=img;}catch{throw Error(file.name+' · JPEG 또는 PNG로 변환한 뒤 다시 선택해주세요.')}finally{URL.revokeObjectURL(url)}
+ }
+ const sourceWidth=bitmap.width,sourceHeight=bitmap.height;if(!sourceWidth||!sourceHeight)throw Error('사진을 읽지 못했습니다.');
+ const scale=Math.min(1,2000/sourceWidth,2000/sourceHeight),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(sourceWidth*scale));canvas.height=Math.max(1,Math.round(sourceHeight*scale));
+ const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close?.();
+ let blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',.84));
+ if(blob&&blob.size>2500000)blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',.64));
+ canvas.width=canvas.height=1;if(!blob||blob.size>2800000)throw Error(file.name+' · 사진을 조금 줄인 후 다시 시도해주세요.');return blob;
+}
+async function galleryUpload(event){
+ event.preventDefault();if(galleryUploaderBusy)return;const author=$('galleryAuthor').value.trim();if(!author)return;
+ if(!gallerySelection.length){const files=Array.from($('galleryFiles').files||[]);if(files.length>8||files.some(f=>f.size>20*1024*1024)){$('galleryUploadStatus').textContent='최대 8장, 한 장당 20MB 이내로 선택해주세요.';return}gallerySelection=files.map(file=>({file,key:galleryUUID()}))}
+ if(!gallerySelection.length){$('galleryUploadStatus').textContent='공유할 사진을 먼저 선택해주세요.';return}
+ galleryUploaderBusy=true;const button=$('galleryUploadButton'),status=$('galleryUploadStatus');button.disabled=true;status.dataset.error='false';let done=0;
+ for(const input of $('galleryUploadForm').querySelectorAll('input,select'))input.disabled=true;
+ try{
+  const items=[...gallerySelection],caption=$('galleryCaption').value.trim(),day=$('galleryDay').value;gallerySaveNickname(author);
+  for(let i=0;i<items.length;i++){
+   const item=items[i];status.textContent=`${i+1}/${items.length}장 · 사진을 준비하고 있어요.`;
+   const blob=item.blob||(item.blob=await galleryCompress(item.file));const form=new FormData();form.set('file',blob,'travel.jpg');form.set('author',author);form.set('caption',caption);form.set('day',day);form.set('requestKey',item.key);form.set('deleteToken',galleryKey());
+   status.textContent=`${i+1}/${items.length}장 · 사진을 공유하고 있어요.`;
+   const data=await galleryRequest('/photos',{method:'POST',body:form});gallerySaveOwn('photos',data.photo.id);gallerySelection=gallerySelection.filter(f=>f.key!==item.key);done++;
+  }
+  status.textContent=`${done}장의 사진을 공유했습니다.`;$('galleryFiles').value='';$('galleryCaption').value='';
+ }catch(e){status.textContent=(done?`${done}장은 공유했습니다. `:'')+e.message+' 남은 사진은 다시 공유하기를 눌러주세요.';status.dataset.error='true'}
+ finally{galleryUploaderBusy=false;button.disabled=false;for(const input of $('galleryUploadForm').querySelectorAll('input,select'))input.disabled=false;if(!gallerySelection.length)$('galleryFiles').value='';galleryPreview();if(done)await galleryLoad({force:true})}
+}
+async function galleryDeletePhoto(id,figure){
+ if(!confirm('내 사진과 이 사진의 댓글을 함께 삭제할까요?'))return;
+ const button=figure.querySelector('.photo-delete');button.disabled=true;
+ try{await galleryRequest('/photos/'+encodeURIComponent(id),{method:'DELETE',headers:{'X-Delete-Token':galleryKey()}});await galleryLoad({force:true})}catch(e){$('galleryStatus').textContent=e.message;$('galleryStatus').dataset.error='true';button.disabled=false}
+}
+function setupGallery(){
+ for(const kind of ['photos','comments']){try{const values=JSON.parse(localStorage.getItem('glp31.gallery.own.'+kind)||'[]');if(Array.isArray(values))for(const id of values)if(typeof id==='string')galleryOwn[kind].add(id)}catch{}}
+ $('galleryAuthor').value=galleryNickname();$('galleryUploadForm').addEventListener('submit',galleryUpload);
+ $('galleryFiles').addEventListener('change',()=>{const files=Array.from($('galleryFiles').files||[]);const status=$('galleryUploadStatus');status.dataset.error='false';if(files.length>8||files.some(f=>f.size>20*1024*1024)){status.textContent=files.length>8?'한 번에 최대 8장까지 선택해주세요.':'사진 한 장은 20MB 이하여야 합니다.';status.dataset.error='true';$('galleryFiles').value='';gallerySelection=[];galleryPreview();return}gallerySelection=files.map(file=>({file,key:galleryUUID()}));status.textContent=files.length?files.length+'장의 사진을 선택했습니다.':'';galleryPreview()});
+ $('galleryRefresh').addEventListener('click',()=>galleryLoad({force:true}));$('galleryMore').addEventListener('click',()=>galleryLoad({more:true}));
+ $('photoDialogClose').addEventListener('click',()=>$('photoDialog').close());$('photoDialog').addEventListener('click',event=>{if(event.target===$('photoDialog'))$('photoDialog').close()});
+}
+
+buildWeatherCards();renderGroups();renderPacking();buildPrintItinerary();renderTravelers();setupGallery();
 const initial=location.hash.match(/^#day-([1-4])$/);selectDay(initial?Number(initial[1])-1:0,{updateHash:false});
 setupScoreboard();setupNavigation();fetchWeather();setupLiveFeatures();
 </script>
