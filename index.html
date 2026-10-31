@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#183f35">
-<meta name="app-version" content="2026.10.31-dinners-manual-v13">
+<meta name="app-version" content="2026.10.31-independent-score-v14">
 <meta name="description" content="2026년 11월 25–28일 가고시마·히토요시 골프 여행. 3박 4일, 54홀, 일정별 날씨와 이동 지도, 식당과 온천 안내.">
 <title>2026 AUTOMN GOLF ESCAPE - SNU GLP 31</title>
 <style>
@@ -161,7 +161,7 @@ html{scroll-behavior:auto}
 </section>
 
 <details class="source-box"><summary>사진 출처·시설 정보·날씨 및 지도 안내</summary><div class="source-content"><p>일정·인원·숙박·식사 포함 여부·이동시간의 기준은 사용자가 제공한 2026.11.25–28 여행 일정표입니다. 원안 자체가 현지 사정에 따른 변경 가능성을 명시하고 있어 예약 확정 정보와 구분했습니다. 참가자 이름은 사용자가 추가로 제공한 한글 명단을 기준으로 조편성에 반영했습니다. 여행사 담당자의 연락처·계좌정보는 게시 페이지에 포함하지 않았습니다.</p><p style="margin-top:10px">날씨는 Open-Meteo의 최대 16일 예보에서 해당 날짜가 제공될 때 표시합니다. 범위 밖 날짜는 ‘예보 대기’, 지난 날짜는 ‘예보 기간 종료’, 접속 오류는 ‘불러오기 실패’로 표시합니다. 풍속 단위는 m/s, 시간대는 Asia/Tokyo입니다. 예보를 받을 때마다 갱신하며 가상의 일별 예보나 평년값을 예보처럼 표시하지 않습니다.</p><p style="margin-top:10px">지도는 Google Maps를 사용합니다. 지도 안에 경로가 표시되지 않는 브라우저에서는 ‘Google 지도 길찾기’를 눌러 경로와 최신 예상시간을 확인하세요. 골프장·공항 이동시간은 원안 기준 계획값입니다. 저녁 식당 왕복 시간은 2026.10.31 Google 지도에서 확인한 승용차 예상값이며, 여행 당일 교통과 단체 승하차는 포함하지 않습니다. 원안 골프장 복귀시간만 역방향 참고값으로 표시합니다.</p><p style="margin-top:10px"><b>사진 출처</b>　첫 화면: <a href="https://commons.wikimedia.org/wiki/File:View_of_Sakurajima_from_Shiroyama_Park_Observatory_-_Jan_27,_2010.jpg" target="_blank" rel="noopener noreferrer">Jody McIntyre, View of Sakurajima from Shiroyama Park Observatory (2010.01.27)</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>. 사진 파일은 수정하지 않았으며 화면 비율에 맞춰 일부 영역이 잘려 보일 수 있습니다. 해당 사진의 표시상 크롭에도 같은 라이선스를 적용합니다. 골프장 사진은 각 코스의 공식 사이트에서 해당 코스임을 확인한 이미지이며, 각 카드의 공식 코스 정보에서 원출처를 확인할 수 있습니다. 로고는 사용자가 첨부한 이미지입니다.</p><div class="source-links"><a href="https://kokusaigolf.com/access.html" target="_blank" rel="noopener noreferrer">가고시마 국제 GC</a><a href="https://www.mizobecc.co.jp/access.html" target="_blank" rel="noopener noreferrer">미조베 CC</a><a href="https://cherry-group.jp/course_hitoyoshi/access.html" target="_blank" rel="noopener noreferrer">체리골프 히토요시</a><a href="https://hotel-hananoshou.com/contact.html" target="_blank" rel="noopener noreferrer">호텔 주소·연락처</a><a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener noreferrer">날씨 API 안내</a><a href="https://developers.google.com/maps/documentation/urls/get-started" target="_blank" rel="noopener noreferrer">Google Maps URLs</a></div></div></details>
-</main><footer><div class="wrap"><span>SNU GLP 31 · 2026 AUTOMN GOLF ESCAPE</span><span>일정표를 바탕으로 만든 여행 수첩 · 정보 확인 2026.10.31 · SNU GLP 31 · 저녁동선·즉시갱신 v13 <a class="mobile-top" href="#top" style="margin-left:12px">맨 위로 ↑</a></span></div></footer><div class="toast" id="toast" role="status" hidden></div>
+</main><footer><div class="wrap"><span>SNU GLP 31 · 2026 AUTOMN GOLF ESCAPE</span><span>일정표를 바탕으로 만든 여행 수첩 · 정보 확인 2026.10.31 · SNU GLP 31 · 독립스코어갱신 v14 <a class="mobile-top" href="#top" style="margin-left:12px">맨 위로 ↑</a></span></div></footer><div class="toast" id="toast" role="status" hidden></div>
 <script>
 'use strict';
 /* ===== 수정할 여행 데이터: 날짜, 항공편, 코스, 이동시간을 여기서 편집하세요. ===== */
@@ -982,36 +982,40 @@ function renderDayGroups() {
  $('dayGroups').hidden=activeDay===0;
  if(activeDay>0)$('dayGroups').innerHTML='<h4>오늘의 조편성 · 각 4명</h4>'+GROUPS[activeDay-1].map((g,i)=>`<p><strong>${i+1}조</strong>${g.map(n=>n===null?'미정':escapeHTML(n)).join(' · ')}</p>`).join('')+'<a href="#groups">전체 조편성 · 내 조 찾기 ↓</a>';
 }
+let lastSyncBuild='',syncErrors={groups:'',scores:''};
 function applyGroupsPayload(payload,{updateGroups=true,updateScores=true,now=Date.now()}={}) {
- const next=validateGroupsPayload(payload),nextRoster=updateGroups?groupRoster(next,payload):PLAYERS;
- const changed=updateGroups&&(JSON.stringify(next)!==JSON.stringify(GROUPS)||JSON.stringify(nextRoster)!==JSON.stringify(PLAYERS));
- let nextScores=null,scoreChanged=false;
+ lastSyncBuild=typeof payload?.apiBuild==='string'?payload.apiBuild:'';
+ if(!payload||payload.ok!==true||![1,2].includes(payload.schemaVersion)||JSON.stringify(payload.roundDates)!==JSON.stringify(DAYS.slice(1).map(d=>d.date))){const code=updateScores&&!updateGroups?payload?.scoresError:updateGroups&&!updateScores?payload?.groupsError:null;throw new Error(code||payload?.error||'INVALID_RESPONSE');}
+ let next=null,nextRoster=PLAYERS,changed=false,nextScores=null,scoreChanged=false;
+ if(updateGroups) {
+  try {
+   if(payload.groupsState==='error'||payload.groupsState==='not_requested')throw new Error(payload.groupsError||'GROUPS_NOT_READY');
+   next=validateGroupsPayload(payload);nextRoster=groupRoster(next,payload);
+   changed=JSON.stringify(next)!==JSON.stringify(GROUPS)||JSON.stringify(nextRoster)!==JSON.stringify(PLAYERS);
+   groupsState='live';groupsLastCheck=now;groupsHaveSynced=true;syncErrors.groups='';
+  } catch(error) {next=null;nextRoster=PLAYERS;groupsState='error';syncErrors.groups=payload.groupsError||error.message||'INVALID_GROUPS';}
+ }
  if(updateScores) {
   if(payload.schemaVersion===2&&payload.scoresState==='ready') {
-   try {nextScores=validateScoresPayload(payload.scores,nextRoster);scoreChanged=JSON.stringify(nextScores)!==JSON.stringify(SCORES);scoresState='live';scoresLastCheck=now;scoresCheckedAt=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date(now));}
-   catch {scoresState='error';}
-  } else scoresState=payload.schemaVersion===1?'legacy':'error';
+   try {nextScores=validateScoresPayload(payload.scores,nextRoster);scoreChanged=JSON.stringify(nextScores)!==JSON.stringify(SCORES);scoresState='live';scoresLastCheck=now;scoresCheckedAt=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date(now));syncErrors.scores='';}
+   catch(error){scoresState='error';syncErrors.scores=error.message||'INVALID_SCORES';}
+  } else {scoresState=payload.schemaVersion===1?'legacy':'error';syncErrors.scores=payload.scoresError||'SCORES_NOT_READY';}
  }
- if(changed) {
-  PLAYERS=nextRoster;
-  GROUPS=next;refreshPlayerOptions();renderGroups();renderDayGroups();renderTravelers();
- }
- if(updateGroups){groupsState='live';groupsLastCheck=now;groupsHaveSynced=true;}
+ if(next&&changed) {PLAYERS=nextRoster;GROUPS=next;refreshPlayerOptions();renderGroups();renderDayGroups();renderTravelers();}
  if(nextScores)SCORES=nextScores;
- renderScoreboard();
- return changed||scoreChanged;
+ renderScoreboard();return changed||scoreChanged;
 }
 
 function trustedGroupsEndpoint(raw) {
  try {const u=new URL(raw);return u.protocol==='https:'&&u.hostname==='script.google.com'&&/^\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(u.pathname)&&!u.search&&!u.hash?u:null;}catch{return null;}
 }
-function loadGroupsJSONP(endpoint) {
+function loadGroupsJSONP(endpoint,{target='both'}={}) {
  return new Promise((resolve,reject)=>{
   const cb='__glpGroups_'+Date.now()+'_'+Math.random().toString(36).slice(2),script=document.createElement('script');
   let timer;
   const finish=(error,data)=>{clearTimeout(timer);delete window[cb];script.remove();error?reject(error):resolve(data);};
   window[cb]=data=>finish(null,data);script.onerror=()=>finish(new Error('NETWORK_ERROR'));
-  const url=new URL(endpoint.href);url.searchParams.set('callback',cb);url.searchParams.set('_',Date.now());
+  const url=new URL(endpoint.href);url.searchParams.set('callback',cb);url.searchParams.set('_',Date.now());url.searchParams.set('target',target);
   script.src=url.href;script.referrerPolicy='no-referrer';script.async=true;
   timer=setTimeout(()=>finish(new Error('TIMEOUT')),15000);document.head.appendChild(script);
  });
@@ -1022,7 +1026,7 @@ function datasetSyncStatus(kind,now=Date.now()) {
  const checked=kind==='groups'?groupsLastCheck:scoresLastCheck;
  const start=SYNC_START_MS[kind],plan=SYNC_START_LABEL[kind];
  if(groupsSyncBusy&&syncBusyTargets.includes(kind))return {state:'loading',text:(kind==='groups'?'조편성':'스코어')+' 확인 중…'};
- if(state==='error')return {state:'error',text:kind==='groups'?'마지막 확인본 유지 · 연결/입력 확인 필요 (미정 허용은 연결 코드도 업데이트)':'마지막 정상 스코어 유지 · 연결/입력 확인 필요'};
+ if(state==='error'){const code=/^[A-Z_]{1,50}$/.test(syncErrors[kind])?' · '+syncErrors[kind]:'';return {state:'error',text:(kind==='groups'?'조편성':'스코어')+' 조회 실패 · 마지막 확인본 유지'+code};}
  if(state==='legacy')return {state:'legacy',text:'스코어 연결 대기 · 연결 코드 업데이트 필요'};
  if(checked) {
   const label=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date(checked));
@@ -1065,16 +1069,18 @@ async function syncGroups({manual=false,target='both'}={}) {
  }
  groupsSyncBusy=true;syncBusyTargets=targets;$('refreshGroups').disabled=true;$('refreshScores').disabled=true;refreshSyncUI();
  try {
-  const payload=await loadGroupsJSONP(endpoint);
+  const payload=await loadGroupsJSONP(endpoint,{target:targets.length===1?targets[0]:'both'});
+  lastSyncBuild=typeof payload?.apiBuild==='string'?payload.apiBuild:'';
   const changed=applyGroupsPayload(payload,{updateGroups:targets.includes('groups'),updateScores:targets.includes('scores'),now:Date.now()});
   if(manual) {
-   if(targets.includes('scores')&&['error','legacy'].includes(scoresState))notify('스코어 연결 또는 입력 형식을 확인하세요. 마지막 정상 기록을 유지합니다.');
+   if(targets.some(kind=>['error','legacy'].includes(kind==='groups'?groupsState:scoresState)))notify('일부 데이터를 읽지 못했습니다. 정상 조회된 데이터만 반영하고 나머지는 이전 기록을 유지합니다.');
    else notify(changed?'최신 '+(target==='groups'?'조편성':target==='scores'?'스코어':'조편성·스코어')+'을 반영했습니다.':'현재 표시 데이터가 최신입니다.');
   }
- } catch {
-  if(targets.includes('groups'))groupsState='error';
-  if(targets.includes('scores'))scoresState='error';
-  if(manual)notify('조회에 실패해 마지막 정상 데이터를 유지합니다.');
+ } catch(error) {
+  const code=/^[A-Z_]{1,50}$/.test(error.message)?error.message:'NETWORK_ERROR';
+  if(targets.includes('groups')){groupsState='error';syncErrors.groups=code;}
+  if(targets.includes('scores')){scoresState='error';syncErrors.scores=code;}
+  if(manual)notify(lastSyncBuild?'조회하지 못했습니다. 표시된 오류 코드를 확인해주세요.':'연동 서버 응답을 확인하지 못했습니다. 배포 주소와 활성 버전을 확인해주세요.');
  } finally {
   groupsSyncBusy=false;syncBusyTargets=[];$('refreshGroups').disabled=false;$('refreshScores').disabled=false;refreshSyncUI();scheduleNextAutoSync();
  }
